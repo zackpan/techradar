@@ -1,0 +1,1241 @@
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1601987992.5468986,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-zackpan-techradar-master-n8wm5-nvwrs[0m
+{"level":"info","ts":1601988022.2312474,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/*******/techradar.git @ v0.0.1 in path /workspace/source"}
+{"level":"warn","ts":1601988022.2313254,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1601988022.2624617,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+
+> node-sass@4.13.0 install /workspace/source/node_modules/node-sass
+> node scripts/install.js
+
+Downloading binary from https://github.com/sass/node-sass/releases/download/v4.13.0/linux-x64-67_binding.node
+Download complete
+Binary saved to /workspace/source/node_modules/node-sass/vendor/linux-x64-67/binding.node
+Caching binary to /tekton/home/.npm/node-sass/4.13.0/linux-x64-67_binding.node
+
+> cypress@3.7.0 postinstall /workspace/source/node_modules/cypress
+> node index.js --exec install
+
+Installing Cypress (version: 3.7.0)
+
+[?25l[12:40:49]  Downloading Cypress     [started]
+[12:40:51]  Downloading Cypress     [completed]
+[12:40:51]  Unzipping Cypress       [started]
+[12:41:36]  Unzipping Cypress       [completed]
+[12:41:36]  Finishing Installation  [started]
+[12:41:36]  Finishing Installation  [completed]
+[?25h
+You can now open Cypress by running: node_modules/.bin/cypress open
+
+https://on.cypress.io/installing-cypress
+
+[?25h
+> node-sass@4.13.0 postinstall /workspace/source/node_modules/node-sass
+> node scripts/build.js
+
+Binary found at /workspace/source/node_modules/node-sass/vendor/linux-x64-67/binding.node
+Testing binary
+Binary is fine
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+added 1617 packages from 1117 contributors and audited 1675 packages in 73.892s
+found 378 vulnerabilities (371 low, 1 moderate, 6 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> build-your-own-radar@0.3.0 test /workspace/source
+> standard --fix && istanbul cover jasmine
+
+Failed to parse file: /workspace/source/src/util/autoComplete.js
+Transformation error; return original code
+{ Error: Line 37: Unexpected token ...
+    at constructError (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2407:21)
+    at createError (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2426:17)
+    at unexpectedTokenError (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2500:13)
+    at throwUnexpectedToken (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2505:15)
+    at parseObjectPropertyKey (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2891:9)
+    at parseObjectProperty (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:3003:19)
+    at parseObjectInitializer (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:3050:29)
+    at inheritCoverGrammar (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2681:18)
+    at parsePrimaryExpression (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:3247:20)
+    at inheritCoverGrammar (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2681:18)
+  lineNumber: 37,
+  description: 'Unexpected token ...',
+  index: 1290 }
+Started
+***********.....................................................**
+
+Pending:
+
+1) tr.graphing.Radar init appends the svg
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+2) tr.graphing.Radar init selects body if no selector provided
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+3) tr.graphing.Radar init selects the selector if provided
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+4) tr.graphing.Radar sets the size
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+5) tr.graphing.Radar lines plots a vertical line in the center
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+6) tr.graphing.Radar lines plots a horizontal line in the center
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+7) tr.graphing.Radar circles plots the circles for the rings
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+8) tr.graphing.Radar circles adds the name of each ring for the right side
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+9) tr.graphing.Radar circles adds the name of each ring for the right side
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+10) graphingRadar render groups blips by ring
+  No reason given
+
+
+11) graphingRadar render respects the assigned order of rings
+  No reason given
+
+
+12) sheet calls back with nothing if the sheet exists
+  need to be fix: XMLHttpRequest is not defined
+
+
+13) sheet calls back with error if sheet the sheet does not exist
+  need to be fix: XMLHttpRequest is not defined
+
+66 specs, 0 failures, 13 pending specs
+Finished in 0.076 seconds
+Failed to parse file: /workspace/source/src/util/autoComplete.js
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0020] Resolved base name node:10.15.3 to source    
+[36mINFO[0m[0020] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0020] Retrieving image manifest node:10.15.3       
+[36mINFO[0m[0020] Retrieving image manifest node:10.15.3       
+[36mINFO[0m[0021] Retrieving image manifest nginx:1.15.9       
+[36mINFO[0m[0021] Retrieving image manifest nginx:1.15.9       
+[36mINFO[0m[0021] Built cross stage deps: map[0:[/src/build-your-own-radar/dist]] 
+[36mINFO[0m[0021] Retrieving image manifest node:10.15.3       
+[36mINFO[0m[0021] Retrieving image manifest node:10.15.3       
+[36mINFO[0m[0021] Executing 0 build triggers                   
+[36mINFO[0m[0021] Checking for cached layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:4be5150ff07e770da6509598909a4216471df766f5a0521b65087ab909ac1e63... 
+[36mINFO[0m[0022] No cached layer found for cmd COPY package.json ./ 
+[36mINFO[0m[0025] Unpacking rootfs as cmd COPY package.json ./ requires it. 
+[36mINFO[0m[0040] WORKDIR /src/build-your-own-radar            
+[36mINFO[0m[0040] cmd: workdir                                 
+[36mINFO[0m[0040] Changed working directory to /src/build-your-own-radar 
+[36mINFO[0m[0040] Creating directory /src/build-your-own-radar 
+[36mINFO[0m[0040] Resolving 1 paths                            
+[36mINFO[0m[0040] Taking snapshot of files...                  
+[36mINFO[0m[0040] COPY package.json ./                         
+[36mINFO[0m[0040] Resolving 1 paths                            
+[36mINFO[0m[0040] Taking snapshot of files...                  
+[36mINFO[0m[0040] RUN npm install                              
+[36mINFO[0m[0040] Taking snapshot of full filesystem...        
+[36mINFO[0m[0040] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:4be5150ff07e770da6509598909a4216471df766f5a0521b65087ab909ac1e63 to cache now 
+[36mINFO[0m[0045] Resolving 39698 paths                        
+[36mINFO[0m[0049] cmd: /bin/sh                                 
+[36mINFO[0m[0049] args: [-c npm install]                       
+[36mINFO[0m[0049] Running: [/bin/sh -c npm install]            
+npm WARN deprecated istanbul@0.4.5: This module is no longer maintained, try this instead:
+npm WARN deprecated   npm i nyc
+npm WARN deprecated Visit https://istanbul.js.org/integrations for other alternatives.
+npm WARN deprecated request@2.88.0: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated request-promise-native@1.0.9: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+
+> node-sass@4.14.1 install /src/build-your-own-radar/node_modules/node-sass
+> node scripts/install.js
+
+Downloading binary from https://github.com/sass/node-sass/releases/download/v4.14.1/linux-x64-64_binding.node
+Download complete
+Binary saved to /src/build-your-own-radar/node_modules/node-sass/vendor/linux-x64-64/binding.node
+Caching binary to /root/.npm/node-sass/4.14.1/linux-x64-64_binding.node
+
+> core-js@2.6.11 postinstall /src/build-your-own-radar/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+[96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+
+[96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+[96m>[94m https://opencollective.com/core-js [0m
+[96m>[94m https://www.patreon.com/zloirock [0m
+
+[96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+
+
+> cypress@3.8.3 postinstall /src/build-your-own-radar/node_modules/cypress
+> node index.js --exec install
+
+Installing Cypress (version: 3.8.3)
+
+[?25l[12:43:01]  Downloading Cypress     [started]
+[12:43:01]  Downloading Cypress      0% 0s [title changed]
+[12:43:01]  Downloading Cypress      4% 2s [title changed]
+[12:43:01]  Downloading Cypress      10% 2s [title changed]
+[12:43:02]  Downloading Cypress      16% 2s [title changed]
+[12:43:02]  Downloading Cypress      24% 1s [title changed]
+[12:43:02]  Downloading Cypress      32% 1s [title changed]
+[12:43:02]  Downloading Cypress      41% 1s [title changed]
+[12:43:02]  Downloading Cypress      48% 1s [title changed]
+[12:43:02]  Downloading Cypress      53% 1s [title changed]
+[12:43:02]  Downloading Cypress      59% 1s [title changed]
+[12:43:02]  Downloading Cypress      65% 1s [title changed]
+[12:43:02]  Downloading Cypress      71% 0s [title changed]
+[12:43:03]  Downloading Cypress      76% 0s [title changed]
+[12:43:03]  Downloading Cypress      83% 0s [title changed]
+[12:43:03]  Downloading Cypress      98% 0s [title changed]
+[12:43:04]  Downloaded Cypress      [title changed]
+[12:43:04]  Downloaded Cypress      [completed]
+[12:43:04]  Unzipping Cypress       [started]
+[12:43:04]  Unzipping Cypress        0% 0s [title changed]
+[12:43:06]  Unzipping Cypress        1% 257s [title changed]
+[12:43:06]  Unzipping Cypress        1% 258s [title changed]
+[12:43:06]  Unzipping Cypress        1% 259s [title changed]
+[12:43:06]  Unzipping Cypress        1% 260s [title changed]
+[12:43:06]  Unzipping Cypress        1% 261s [title changed]
+[12:43:06]  Unzipping Cypress        1% 262s [title changed]
+[12:43:06]  Unzipping Cypress        1% 263s [title changed]
+[12:43:06]  Unzipping Cypress        2% 130s [title changed]
+[12:43:06]  Unzipping Cypress        2% 131s [title changed]
+[12:43:06]  Unzipping Cypress        2% 132s [title changed]
+[12:43:06]  Unzipping Cypress        2% 133s [title changed]
+[12:43:06]  Unzipping Cypress        2% 134s [title changed]
+[12:43:06]  Unzipping Cypress        2% 135s [title changed]
+[12:43:06]  Unzipping Cypress        3% 89s [title changed]
+[12:43:07]  Unzipping Cypress        3% 90s [title changed]
+[12:43:07]  Unzipping Cypress        3% 91s [title changed]
+[12:43:07]  Unzipping Cypress        3% 92s [title changed]
+[12:43:07]  Unzipping Cypress        4% 69s [title changed]
+[12:43:07]  Unzipping Cypress        4% 70s [title changed]
+[12:43:07]  Unzipping Cypress        5% 56s [title changed]
+[12:43:07]  Unzipping Cypress        5% 57s [title changed]
+[12:43:07]  Unzipping Cypress        6% 47s [title changed]
+[12:43:07]  Unzipping Cypress        6% 48s [title changed]
+[12:43:07]  Unzipping Cypress        7% 41s [title changed]
+[12:43:07]  Unzipping Cypress        7% 42s [title changed]
+[12:43:07]  Unzipping Cypress        8% 36s [title changed]
+[12:43:07]  Unzipping Cypress        8% 37s [title changed]
+[12:43:07]  Unzipping Cypress        9% 32s [title changed]
+[12:43:07]  Unzipping Cypress        9% 33s [title changed]
+[12:43:07]  Unzipping Cypress        10% 30s [title changed]
+[12:43:07]  Unzipping Cypress        11% 27s [title changed]
+[12:43:07]  Unzipping Cypress        11% 28s [title changed]
+[12:43:07]  Unzipping Cypress        12% 25s [title changed]
+[12:43:07]  Unzipping Cypress        13% 23s [title changed]
+[12:43:07]  Unzipping Cypress        13% 24s [title changed]
+[12:43:07]  Unzipping Cypress        14% 22s [title changed]
+[12:43:07]  Unzipping Cypress        15% 21s [title changed]
+[12:43:07]  Unzipping Cypress        16% 19s [title changed]
+[12:43:07]  Unzipping Cypress        16% 20s [title changed]
+[12:43:08]  Unzipping Cypress        17% 19s [title changed]
+[12:43:08]  Unzipping Cypress        18% 18s [title changed]
+[12:43:08]  Unzipping Cypress        19% 17s [title changed]
+[12:43:08]  Unzipping Cypress        20% 16s [title changed]
+[12:43:08]  Unzipping Cypress        21% 15s [title changed]
+[12:43:08]  Unzipping Cypress        21% 16s [title changed]
+[12:43:08]  Unzipping Cypress        22% 15s [title changed]
+[12:43:08]  Unzipping Cypress        23% 15s [title changed]
+[12:43:08]  Unzipping Cypress        24% 14s [title changed]
+[12:43:08]  Unzipping Cypress        25% 14s [title changed]
+[12:43:08]  Unzipping Cypress        26% 13s [title changed]
+[12:43:08]  Unzipping Cypress        27% 13s [title changed]
+[12:43:08]  Unzipping Cypress        28% 12s [title changed]
+[12:43:09]  Unzipping Cypress        29% 12s [title changed]
+[12:43:09]  Unzipping Cypress        30% 11s [title changed]
+[12:43:09]  Unzipping Cypress        30% 12s [title changed]
+[12:43:09]  Unzipping Cypress        31% 12s [title changed]
+[12:43:09]  Unzipping Cypress        32% 11s [title changed]
+[12:43:09]  Unzipping Cypress        32% 12s [title changed]
+[12:43:09]  Unzipping Cypress        33% 11s [title changed]
+[12:43:09]  Unzipping Cypress        34% 11s [title changed]
+[12:43:09]  Unzipping Cypress        35% 10s [title changed]
+[12:43:09]  Unzipping Cypress        35% 11s [title changed]
+[12:43:09]  Unzipping Cypress        36% 10s [title changed]
+[12:43:09]  Unzipping Cypress        37% 10s [title changed]
+[12:43:10]  Unzipping Cypress        38% 9s [title changed]
+[12:43:10]  Unzipping Cypress        38% 10s [title changed]
+[12:43:10]  Unzipping Cypress        39% 9s [title changed]
+[12:43:10]  Unzipping Cypress        40% 9s [title changed]
+[12:43:10]  Unzipping Cypress        41% 9s [title changed]
+[12:43:10]  Unzipping Cypress        42% 8s [title changed]
+[12:43:10]  Unzipping Cypress        42% 9s [title changed]
+[12:43:10]  Unzipping Cypress        43% 8s [title changed]
+[12:43:10]  Unzipping Cypress        44% 8s [title changed]
+[12:43:11]  Unzipping Cypress        44% 9s [title changed]
+[12:43:11]  Unzipping Cypress        45% 9s [title changed]
+[12:43:11]  Unzipping Cypress        46% 8s [title changed]
+[12:43:11]  Unzipping Cypress        47% 8s [title changed]
+[12:43:11]  Unzipping Cypress        48% 8s [title changed]
+[12:43:11]  Unzipping Cypress        49% 8s [title changed]
+[12:43:11]  Unzipping Cypress        50% 8s [title changed]
+[12:43:12]  Unzipping Cypress        51% 8s [title changed]
+[12:43:12]  Unzipping Cypress        52% 7s [title changed]
+[12:43:12]  Unzipping Cypress        53% 7s [title changed]
+[12:43:12]  Unzipping Cypress        54% 7s [title changed]
+[12:43:12]  Unzipping Cypress        55% 7s [title changed]
+[12:43:12]  Unzipping Cypress        56% 6s [title changed]
+[12:43:12]  Unzipping Cypress        57% 6s [title changed]
+[12:43:12]  Unzipping Cypress        58% 6s [title changed]
+[12:43:12]  Unzipping Cypress        59% 6s [title changed]
+[12:43:12]  Unzipping Cypress        60% 6s [title changed]
+[12:43:12]  Unzipping Cypress        61% 5s [title changed]
+[12:43:12]  Unzipping Cypress        61% 6s [title changed]
+[12:43:12]  Unzipping Cypress        62% 5s [title changed]
+[12:43:12]  Unzipping Cypress        63% 5s [title changed]
+[12:43:12]  Unzipping Cypress        64% 5s [title changed]
+[12:43:13]  Unzipping Cypress        65% 5s [title changed]
+[12:43:13]  Unzipping Cypress        66% 5s [title changed]
+[12:43:13]  Unzipping Cypress        67% 4s [title changed]
+[12:43:13]  Unzipping Cypress        68% 4s [title changed]
+[12:43:13]  Unzipping Cypress        100% 0s [title changed]
+[12:43:13]  Unzipped Cypress        [title changed]
+[12:43:13]  Unzipped Cypress        [completed]
+[12:43:13]  Finishing Installation  [started]
+[12:43:13]  Finished Installation   /root/.cache/Cypress/3.8.3 [title changed]
+[12:43:13]  Finished Installation   /root/.cache/Cypress/3.8.3 [completed]
+[?25h
+You can now open Cypress by running: node_modules/.bin/cypress open
+
+https://on.cypress.io/installing-cypress
+
+[?25h
+> node-sass@4.14.1 postinstall /src/build-your-own-radar/node_modules/node-sass
+> node scripts/build.js
+
+Binary found at /src/build-your-own-radar/node_modules/node-sass/vendor/linux-x64-64/binding.node
+Testing binary
+Binary is fine
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.1.2 (node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/watchpack-chokidar2/node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/webpack-dev-server/node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN jsdom@15.2.1 requires a peer of canvas@^2.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN sass-loader@8.0.2 requires a peer of sass@^1.3.0 but none is installed. You must install peer dependencies yourself.
+npm WARN sass-loader@8.0.2 requires a peer of fibers@>= 3.1.0 but none is installed. You must install peer dependencies yourself.
+npm WARN ws@7.3.1 requires a peer of bufferutil@^4.0.1 but none is installed. You must install peer dependencies yourself.
+npm WARN ws@7.3.1 requires a peer of utf-8-validate@^5.0.2 but none is installed. You must install peer dependencies yourself.
+npm WARN build-your-own-radar@0.3.0 No description
+
+added 1478 packages from 1137 contributors and audited 1482 packages in 43.012s
+found 4 low severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details
+[36mINFO[0m[0092] Taking snapshot of full filesystem...        
+[36mINFO[0m[0093] Resolving 131576 paths                       
+[36mINFO[0m[0161] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:555153dc31e0903f89994cda2cc5a37e451cf97220535982ad06d94e12d894b2 to cache now 
+[36mINFO[0m[0164] COPY . ./                                    
+[36mINFO[0m[0168] Resolving 147 paths                          
+[36mINFO[0m[0168] Taking snapshot of files...                  
+[36mINFO[0m[0168] RUN npm run build                            
+[36mINFO[0m[0168] cmd: /bin/sh                                 
+[36mINFO[0m[0168] args: [-c npm run build]                     
+[36mINFO[0m[0168] Running: [/bin/sh -c npm run build]          
+[36mINFO[0m[0168] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:01885ac8998f6d03142478f7b3019fdff4182fbeb3f8f393901bc9aff30c89b3 to cache now 
+
+> build-your-own-radar@0.3.0 build /src/build-your-own-radar
+> webpack --mode production
+
+Hash: 2fec71d3407cb18730ce
+Version: webpack 4.44.2
+Time: 21167ms
+Built at: 10/06/2020 12:44:55 PM
+                                  Asset       Size  Chunks                                Chunk Names
+        common.2fec71d3407cb18730ce.css   10.5 KiB       0  [emitted] [immutable]         common
+         common.2fec71d3407cb18730ce.js   4.06 KiB       0  [emitted] [immutable]         common
+                             error.html   1.12 KiB          [emitted]                     
+                     images/favicon.ico   1.12 KiB          [emitted]                     
+                        images/logo.png   5.52 KiB          [emitted]                     
+                images/radar_legend.png   5.92 KiB          [emitted]                     
+              images/search-logo-2x.svg   1.65 KiB          [emitted]                     
+images/tech-radar-landing-page-wide.png   16.1 KiB          [emitted]                     
+                     images/tw-logo.png   3.64 KiB          [emitted]                     
+                             index.html  293 bytes          [emitted]                     
+          main.2fec71d3407cb18730ce.css   10.5 KiB       1  [emitted] [immutable]         main
+           main.2fec71d3407cb18730ce.js   1.14 MiB       1  [emitted] [immutable]  [big]  main
+Entrypoint main [big] = main.2fec71d3407cb18730ce.css main.2fec71d3407cb18730ce.js
+Entrypoint common = common.2fec71d3407cb18730ce.css common.2fec71d3407cb18730ce.js
+ [25] ./src/util/exceptionMessages.js 736 bytes {1} [built]
+ [26] ./src/common.js 199 bytes {0} {1} [built]
+ [27] ./src/stylesheets/base.scss 692 bytes {0} {1} [built]
+ [29] ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--5-2!./node_modules/postcss-loader/src??postcss!./node_modules/sass-loader/dist/cjs.js!./src/stylesheets/base.scss 39 bytes {0} {1} [built]
+ [30] ./src/images/tech-radar-landing-page-wide.png 83 bytes {0} {1} [built]
+ [31] ./src/images/tw-logo.png 62 bytes {0} {1} [built]
+ [32] ./src/images/favicon.ico 62 bytes {0} {1} [built]
+ [33] ./src/images/search-logo-2x.svg 69 bytes {0} {1} [built]
+ [91] multi ./src/site.js 28 bytes {1} [built]
+ [92] ./src/site.js 194 bytes {1} [built]
+ [93] ./src/images/logo.png 59 bytes {1} [built]
+ [94] ./src/images/radar_legend.png 67 bytes {1} [built]
+ [95] ./src/gtm.js 482 bytes {1} [built]
+ [96] ./src/util/factory.js 12.1 KiB {1} [built]
+[248] multi ./src/common.js 28 bytes {0} [built]
+    + 237 hidden modules
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  main.2fec71d3407cb18730ce.js (1.14 MiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (1.15 MiB)
+      main.2fec71d3407cb18730ce.css
+      main.2fec71d3407cb18730ce.js
+
+
+WARNING in webpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+Child html-webpack-plugin for "error.html":
+     1 asset
+    Entrypoint undefined = error.html
+    [0] ./node_modules/html-webpack-plugin/lib/loader.js!./src/error.html 1.19 KiB {0} [built]
+    [2] (webpack)/buildin/global.js 472 bytes {0} [built]
+    [3] (webpack)/buildin/module.js 497 bytes {0} [built]
+        + 1 hidden module
+Child html-webpack-plugin for "index.html":
+     1 asset
+    Entrypoint undefined = index.html
+    [0] ./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html 359 bytes {0} [built]
+    [2] (webpack)/buildin/global.js 472 bytes {0} [built]
+    [3] (webpack)/buildin/module.js 497 bytes {0} [built]
+        + 1 hidden module
+Child mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--5-2!node_modules/postcss-loader/src/index.js??postcss!node_modules/sass-loader/dist/cjs.js!src/stylesheets/base.scss:
+    Entrypoint mini-css-extract-plugin = *
+    [0] ./node_modules/css-loader/dist/cjs.js??ref--5-2!./node_modules/postcss-loader/src??postcss!./node_modules/sass-loader/dist/cjs.js!./src/stylesheets/base.scss 10.8 KiB {0} [built]
+        + 1 hidden module
+[36mINFO[0m[0191] Taking snapshot of full filesystem...        
+[36mINFO[0m[0191] Resolving 131756 paths                       
+[36mINFO[0m[0251] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:0543c7b0fa80b328eaa9e4f1029a5c2f4e9e9a366df5a06f59d0095dcfedeea7 to cache now 
+[33mWARN[0m[0251] error uploading layer to cache: failed to push to destination 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:4be5150ff07e770da6509598909a4216471df766f5a0521b65087ab909ac1e63: POST https://377247570545.dkr.ecr.us-east-1.amazonaws.com/v2/todo/cache/blobs/uploads/: NAME_UNKNOWN: The repository with name 'todo/cache' does not exist in the registry with id '377247570545' 
+[36mINFO[0m[0251] Saving file src/build-your-own-radar/dist for later use 
+[36mINFO[0m[0251] Deleting filesystem...                       
+[36mINFO[0m[0256] Retrieving image manifest nginx:1.15.9       
+[36mINFO[0m[0256] Retrieving image manifest nginx:1.15.9       
+[36mINFO[0m[0256] Executing 0 build triggers                   
+[36mINFO[0m[0256] Checking for cached layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:74cb10028ec385a4ac5824976992395c7594663b29ebab25b7dd2cbbf154602e... 
+[36mINFO[0m[0256] No cached layer found for cmd COPY --from=source /src/build-your-own-radar/dist . 
+[36mINFO[0m[0256] Unpacking rootfs as cmd COPY --from=source /src/build-your-own-radar/dist . requires it. 
+[36mINFO[0m[0259] WORKDIR /opt/build-your-own-radar            
+[36mINFO[0m[0259] cmd: workdir                                 
+[36mINFO[0m[0259] Changed working directory to /opt/build-your-own-radar 
+[36mINFO[0m[0259] Creating directory /opt/build-your-own-radar 
+[36mINFO[0m[0259] Resolving 1 paths                            
+[36mINFO[0m[0259] Taking snapshot of files...                  
+[36mINFO[0m[0259] COPY --from=source /src/build-your-own-radar/dist . 
+[36mINFO[0m[0259] Resolving 14 paths                           
+[36mINFO[0m[0259] Taking snapshot of files...                  
+[36mINFO[0m[0259] COPY default.template /etc/nginx/conf.d/default.conf 
+[36mINFO[0m[0259] Resolving 1 paths                            
+[36mINFO[0m[0259] Taking snapshot of files...                  
+[36mINFO[0m[0259] CMD ["nginx", "-g", "daemon off;"]           
+[36mINFO[0m[0259] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0259] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:8424c012200c2074c33e50b99e82eb088188706994d9a339edb943d707d9d1cf to cache now 
+[36mINFO[0m[0259] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:74cb10028ec385a4ac5824976992395c7594663b29ebab25b7dd2cbbf154602e to cache now 
+[33mWARN[0m[0260] error uploading layer to cache: failed to push to destination 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:74cb10028ec385a4ac5824976992395c7594663b29ebab25b7dd2cbbf154602e: POST https://377247570545.dkr.ecr.us-east-1.amazonaws.com/v2/todo/cache/blobs/uploads/: NAME_UNKNOWN: The repository with name 'todo/cache' does not exist in the registry with id '377247570545' 
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/techradar to an unshallow repository
+Generating change log from git ref 7c071c719afbb8afd826a1579c5c437dadc8eca6 => c56a87adbf109ed938c9d0120734c8649db33a3e
+Associating user x-0 in users.jenkins.io with email *******@hotmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit de0c338f849bbeb21272ce247848b06772c720c9 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email *******@hotmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit de0c338f849bbeb21272ce247848b06772c720c9 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+Associating user x-0 in users.jenkins.io with email *******@hotmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 37688cfb17a80c3ec00fc3290cda22f1c869dea1 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email *******@hotmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 37688cfb17a80c3ec00fc3290cda22f1c869dea1 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email *******@hotmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 6062895571972351d6b3f4fe2dd89bae9881738b with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email *******@hotmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 6062895571972351d6b3f4fe2dd89bae9881738b with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+WARNING: Failed to enrich commit 54435ffd90982fd376279e6731ff27aeb6ad0dd6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 54435ffd90982fd376279e6731ff27aeb6ad0dd6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 148 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 01431bf7ce542c630517f027379a7564538c9905 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 01431bf7ce542c630517f027379a7564538c9905 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 141 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 06f71e3cba19efbaecc3062cbe4dd01dd8103e94 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 06f71e3cba19efbaecc3062cbe4dd01dd8103e94 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 152 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 298c35be70526bf542be196ddca3ac78a0cb3748 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 298c35be70526bf542be196ddca3ac78a0cb3748 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 137 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit f740972a10dc144289f6bbdd08437fd8fa388698 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f740972a10dc144289f6bbdd08437fd8fa388698 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 154 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 7ae1cfdbd6ede5b1b4ded93484d3479001a891af with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7ae1cfdbd6ede5b1b4ded93484d3479001a891af with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ec49a1bf3185919253beba439987bafa1fcf9bf7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ec49a1bf3185919253beba439987bafa1fcf9bf7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f275e2e2f3d30930edcd156f9af4c4e7a829e0b9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f275e2e2f3d30930edcd156f9af4c4e7a829e0b9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit cb6c91479277ed3fa8c80318740b801580357b3c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit cb6c91479277ed3fa8c80318740b801580357b3c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 92a3cee00e0d2051460a7e2dc6312087e8cdffa2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 92a3cee00e0d2051460a7e2dc6312087e8cdffa2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b1cbf63144e3c1499901d5fa27f6f963b28772a3 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b1cbf63144e3c1499901d5fa27f6f963b28772a3 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit bd384361aade404d81ef190c579a294a334874ad with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit bd384361aade404d81ef190c579a294a334874ad with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ea13df266d01a08a3da280d562aafb15d0ca2c6a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ea13df266d01a08a3da280d562aafb15d0ca2c6a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 90a798729c592105565e4d1081007cf55d5dd94f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 90a798729c592105565e4d1081007cf55d5dd94f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 130 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 07232e96663b9026d87a9e24710ba5b788344de9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 07232e96663b9026d87a9e24710ba5b788344de9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 124 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit fb932f32c2268d1e378509bd1b0984befd989784 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit fb932f32c2268d1e378509bd1b0984befd989784 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 75 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit f5163bdb8dc7ea54aa19fc40fdba5100b8bd42b6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f5163bdb8dc7ea54aa19fc40fdba5100b8bd42b6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 122 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 2b44f482d28d8a5a66703dcbcb58f25ea4b8f56c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2b44f482d28d8a5a66703dcbcb58f25ea4b8f56c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3e7a7254579b545677805958e1990c351667fe4b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3e7a7254579b545677805958e1990c351667fe4b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3bfaa4c6e348c4d25d9afeff855534daa99b973c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3bfaa4c6e348c4d25d9afeff855534daa99b973c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f83c331e0b26aaeac067d7c87f881f8cea99e5ac with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f83c331e0b26aaeac067d7c87f881f8cea99e5ac with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4bf0a90bd682441b690750d72beeb1b2099a926b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4bf0a90bd682441b690750d72beeb1b2099a926b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5b5b03d92be485a05942a6865855663401ce1e2c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5b5b03d92be485a05942a6865855663401ce1e2c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit eb8a3234d9ca14bbeff3a92e8d4320bc5d2c52f5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit eb8a3234d9ca14bbeff3a92e8d4320bc5d2c52f5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 62e648b57969a2e489a706190ea36e46c35c97ce with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 62e648b57969a2e489a706190ea36e46c35c97ce with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f9ca457ef8beb1925c06eee05e5c7e35113d6c2f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f9ca457ef8beb1925c06eee05e5c7e35113d6c2f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1fdc40c3afc01f820fd4757f06f644df3e45a885 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1fdc40c3afc01f820fd4757f06f644df3e45a885 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5cc0e69f0f2b2a25293cdc3ef577c03dd9776e6e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5cc0e69f0f2b2a25293cdc3ef577c03dd9776e6e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1ffae355c557e254f7842f702e84f7bb095c1425 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1ffae355c557e254f7842f702e84f7bb095c1425 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2abb1c046e3b55e36b643453da9bdba9ddd4ae1e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2abb1c046e3b55e36b643453da9bdba9ddd4ae1e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 37f2708b972f78efb68dfd7cce713df6ea4508b5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 37f2708b972f78efb68dfd7cce713df6ea4508b5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8a3f74a1033e7c22717d673d15ea9a0308d3ac87 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8a3f74a1033e7c22717d673d15ea9a0308d3ac87 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0859f6aee533682ebb7fa625d3a74cf90909d845 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0859f6aee533682ebb7fa625d3a74cf90909d845 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d69758b73d0259d17c706b668a4cb87048c0dd08 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d69758b73d0259d17c706b668a4cb87048c0dd08 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 46f7fcb00d28e9c6ae10022ace9e60500c95637e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 46f7fcb00d28e9c6ae10022ace9e60500c95637e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0e3f838fafd81b69002f837b172de79198e4cb13 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0e3f838fafd81b69002f837b172de79198e4cb13 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8cb04ad2ce3a08c8f42fb42580f7b3a68df9160b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8cb04ad2ce3a08c8f42fb42580f7b3a68df9160b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit eeedade7ece49b72fb90058a4d536e3b7e5c9520 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit eeedade7ece49b72fb90058a4d536e3b7e5c9520 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7c0427d8a9fa5f028f84adb3fe6d07063a6945c8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7c0427d8a9fa5f028f84adb3fe6d07063a6945c8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 566d9ca524ff457b23958b7359d04cd3f9fc22ef with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 566d9ca524ff457b23958b7359d04cd3f9fc22ef with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b3db98764ee6c16c1112725733337c3b42978979 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b3db98764ee6c16c1112725733337c3b42978979 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit eafdde84669240fbc30702b2fc2d6cd32377db8d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit eafdde84669240fbc30702b2fc2d6cd32377db8d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 81900902250e4334a64f39e5bbafa156cbb7235f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 81900902250e4334a64f39e5bbafa156cbb7235f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0a86a3178efc9b9cb165ad144b89b3827d4b9c22 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0a86a3178efc9b9cb165ad144b89b3827d4b9c22 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 43750f769ba07099a0dd9f5250fb20fad3c1ae8b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 43750f769ba07099a0dd9f5250fb20fad3c1ae8b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4a58e896d93e8f6eb2a755e69d9885f28ac12979 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4a58e896d93e8f6eb2a755e69d9885f28ac12979 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3115fa92f4d7dbf21f6e979ced4509554b2705c5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3115fa92f4d7dbf21f6e979ced4509554b2705c5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3a5c41e78a8a1d7a7c473dcec66470a986bb09ac with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3a5c41e78a8a1d7a7c473dcec66470a986bb09ac with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit eea53bd14b3ebc0ad7f9912e97ac932fbd78b7e1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit eea53bd14b3ebc0ad7f9912e97ac932fbd78b7e1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6c5e636c1d3b5733deca5dd934c771dd1c401f42 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6c5e636c1d3b5733deca5dd934c771dd1c401f42 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8682b70aad041f9dd3616cdbbc9a8667682b2955 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8682b70aad041f9dd3616cdbbc9a8667682b2955 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0e27a0305e1e2e3460672bcb2969b9ae4893c67d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0e27a0305e1e2e3460672bcb2969b9ae4893c67d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ce732f56e9a02bba63318269ecadeee0a087e241 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ce732f56e9a02bba63318269ecadeee0a087e241 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 4059 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 5e5e33880098d7ccd978db82a02e4676126374aa with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5e5e33880098d7ccd978db82a02e4676126374aa with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0604399572c55f656744add12ecf771ab1aced68 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0604399572c55f656744add12ecf771ab1aced68 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 28f7587056aeaef420164f3bf4c68e636f17e48b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 28f7587056aeaef420164f3bf4c68e636f17e48b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 35521a6aad1537726278e7c7ff8f3e4cd8f79966 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 35521a6aad1537726278e7c7ff8f3e4cd8f79966 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8450f16277f9e1b74d1e175ac84f97fe97369a53 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8450f16277f9e1b74d1e175ac84f97fe97369a53 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7d09d20cc5711257df5f6b4fce2e470f50fe005f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7d09d20cc5711257df5f6b4fce2e470f50fe005f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 4 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 426aad421a591fb1b0d890a2a902763710ffa98f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 426aad421a591fb1b0d890a2a902763710ffa98f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5f3c82c6919da27b7901d9b521bac3d24dace6ec with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5f3c82c6919da27b7901d9b521bac3d24dace6ec with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 207de1e14780b35ca7e328753f2f825673852d68 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 207de1e14780b35ca7e328753f2f825673852d68 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 59c8b52630db2e399acdd06b7350441acc5def5a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 59c8b52630db2e399acdd06b7350441acc5def5a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 82385384cdf530757c02e016a4e476d9769aad97 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 82385384cdf530757c02e016a4e476d9769aad97 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1561d064f7fd24bc693d723daaa9537e1db393bd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1561d064f7fd24bc693d723daaa9537e1db393bd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 70be4114e26403518a38f488f0e8193d19d01267 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 70be4114e26403518a38f488f0e8193d19d01267 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 67154475e26ff84a10063f44c2394bfa59cbd275 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 67154475e26ff84a10063f44c2394bfa59cbd275 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1559f40ce87d2276df8ab396fd5df94de6415fe3 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1559f40ce87d2276df8ab396fd5df94de6415fe3 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2e62a9fb6587a707def4ebea781e9cb34b56d9d1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2e62a9fb6587a707def4ebea781e9cb34b56d9d1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit bb80c3d01ae5ca1970221341a4f06899a6640c97 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit bb80c3d01ae5ca1970221341a4f06899a6640c97 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f7d57749dbf530d4fabd5803e32f22fbd3b00d89 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f7d57749dbf530d4fabd5803e32f22fbd3b00d89 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 999f46002bd1258217a5cae071ab7994f75a3ffe with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 999f46002bd1258217a5cae071ab7994f75a3ffe with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 81a87ce28a989528d52f12d0fe93275266f84667 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 81a87ce28a989528d52f12d0fe93275266f84667 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f087ad4775120f9550ce66604800d2bf85894662 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f087ad4775120f9550ce66604800d2bf85894662 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ceba238fe317c43824fbd538b5e66fcf9264f337 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ceba238fe317c43824fbd538b5e66fcf9264f337 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 51d46ad3b97db6cdf24b40779aa8059f05495d32 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 51d46ad3b97db6cdf24b40779aa8059f05495d32 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 63b23643103e303f5c4e0d81261badec2fd38727 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 63b23643103e303f5c4e0d81261badec2fd38727 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3abffd704f395d3d1c10916ea1998de731915649 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3abffd704f395d3d1c10916ea1998de731915649 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6920a1f95302a6ca6a7097c3fa55d39033190587 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6920a1f95302a6ca6a7097c3fa55d39033190587 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8ad038bcb51191699069abd07328af59e7c520cb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8ad038bcb51191699069abd07328af59e7c520cb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 517836213ebefb60dfa4cfeb42ba355d476662cd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 517836213ebefb60dfa4cfeb42ba355d476662cd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4979ec9dbf0eabb9123cf67426b5d5015d214a7c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4979ec9dbf0eabb9123cf67426b5d5015d214a7c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ae613f8b5ce4da4c4ee1f880f11d52364b840d52 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ae613f8b5ce4da4c4ee1f880f11d52364b840d52 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 26d7eab9d7f997f6b6fe83431a52f64e8aeea6b8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 26d7eab9d7f997f6b6fe83431a52f64e8aeea6b8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5857ab061d93962b8641cf199dcca069cf60eb91 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5857ab061d93962b8641cf199dcca069cf60eb91 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f8c472895c442aef4cb73467440d51cdf00060c1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f8c472895c442aef4cb73467440d51cdf00060c1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 94b8450fc77f265bcf4078cb3902d86f93682d82 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 94b8450fc77f265bcf4078cb3902d86f93682d82 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ebd7c7dbb9adc3e2d1e54423abdc79fe9aaf73fe with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ebd7c7dbb9adc3e2d1e54423abdc79fe9aaf73fe with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 76c257fbd90c57fabd1e190b924b8113cb725fb8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 76c257fbd90c57fabd1e190b924b8113cb725fb8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 97ae1fd5817a771a9703829aa802b325f9550eba with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 97ae1fd5817a771a9703829aa802b325f9550eba with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 845d0779ede6df3bf23a27aba8e26838e05e2c5c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 845d0779ede6df3bf23a27aba8e26838e05e2c5c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d5ca0bbab2e652bd5a1a68b18adfffdfb832cbae with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d5ca0bbab2e652bd5a1a68b18adfffdfb832cbae with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 71628ee89901e3621d166f01bee8154922427736 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 71628ee89901e3621d166f01bee8154922427736 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 98718980c2f0638a995d32186e16915e579850ea with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 98718980c2f0638a995d32186e16915e579850ea with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ded4a79beb4e06ae64045b5a02e52f4d438d6616 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ded4a79beb4e06ae64045b5a02e52f4d438d6616 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 48139a05434b1715ac8940ab081dae1f9fcd6d66 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 48139a05434b1715ac8940ab081dae1f9fcd6d66 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d2bd784dbf362d2b04f8310bc939658d00f3eb9c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d2bd784dbf362d2b04f8310bc939658d00f3eb9c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7fd96d86ef1703fcd309e6227982b81236754396 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7fd96d86ef1703fcd309e6227982b81236754396 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 798282065aeec00b16acc60d54d3af73f9ac64ab with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 798282065aeec00b16acc60d54d3af73f9ac64ab with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3629905bcfc845b5a3224f56ffee7f0fa2f4dde6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3629905bcfc845b5a3224f56ffee7f0fa2f4dde6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 3825 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit ab11c0294f5d9b272173d8ce31e0069327a0e61d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ab11c0294f5d9b272173d8ce31e0069327a0e61d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 190fefecf56e3f6b7ea62e3d67987b0e11a306e9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 190fefecf56e3f6b7ea62e3d67987b0e11a306e9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b23bfb6449cacbf540c6d97e01d95d4082edc390 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b23bfb6449cacbf540c6d97e01d95d4082edc390 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 27 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 8307f8bb1ccf554e48a7f2db9f1d99d3faf188b8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8307f8bb1ccf554e48a7f2db9f1d99d3faf188b8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 26 for repository https://github.com/*******/techradar
+WARNING: Failed to find issue 14 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 4ebc49b84049b84b898529a67dee5179324316c7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4ebc49b84049b84b898529a67dee5179324316c7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5f8fed054d4e6f7d0f830aec4e80ba06e0cda79d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5f8fed054d4e6f7d0f830aec4e80ba06e0cda79d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c3f9fb395dd122c0e5d9c53f44a24dc6478d0771 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c3f9fb395dd122c0e5d9c53f44a24dc6478d0771 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6e61aa13f1e2d9c48e29da737567e8880bd3ce53 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6e61aa13f1e2d9c48e29da737567e8880bd3ce53 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d7359e6c16b7b5b9a330d6701b1e41eb6e9cd7de with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d7359e6c16b7b5b9a330d6701b1e41eb6e9cd7de with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5ccdb2b7c5f0eed1d460a30a81f67ab904dcfe66 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5ccdb2b7c5f0eed1d460a30a81f67ab904dcfe66 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 912fbb5ebe15a45573a9c326eed4d9a94ecbea10 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 912fbb5ebe15a45573a9c326eed4d9a94ecbea10 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 71460dcf0236245bd820f306cf882c75a48b9649 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 71460dcf0236245bd820f306cf882c75a48b9649 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8af059ff591c1d68f21a265f5128fa37bdc6b51e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8af059ff591c1d68f21a265f5128fa37bdc6b51e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f5190cb414a49a9046c6ea13c0c0949e6b647b79 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f5190cb414a49a9046c6ea13c0c0949e6b647b79 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit abe1ae5e34023ab45b11d100ae0b21977a62ad58 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit abe1ae5e34023ab45b11d100ae0b21977a62ad58 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 61b293e1b56178bfc91abe7492d6a8f8026d16b5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 61b293e1b56178bfc91abe7492d6a8f8026d16b5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 78fe1e37141fe79ad6613881f864973c379b56db with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 78fe1e37141fe79ad6613881f864973c379b56db with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2afd550e275db898dd4163b56f05e3ab36bdff98 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2afd550e275db898dd4163b56f05e3ab36bdff98 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0935381d4ea82f69b098afe65e93d248bd69d60d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0935381d4ea82f69b098afe65e93d248bd69d60d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2f3a872c673c76f91eba5ce47173eb227bfd25f2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2f3a872c673c76f91eba5ce47173eb227bfd25f2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f551f66dd839d26345b5e3ca446b06e08b90f95e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f551f66dd839d26345b5e3ca446b06e08b90f95e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a8dc49c11337f6778b0d17057c135b6e58bcfdaa with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a8dc49c11337f6778b0d17057c135b6e58bcfdaa with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit cc28175df94e646ed29fec9c9070abf468a3dfc6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit cc28175df94e646ed29fec9c9070abf468a3dfc6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8f8a30fb49cd643885e985e3ab5ab97e0a4261eb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8f8a30fb49cd643885e985e3ab5ab97e0a4261eb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 41b43b424663373c840f6be4ff88291298d3e500 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 41b43b424663373c840f6be4ff88291298d3e500 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e6fdfb7f34910eaae33cb9d964b4038412cda2e9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e6fdfb7f34910eaae33cb9d964b4038412cda2e9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 16d6f02febd12e8444b148925c602df1396f118e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 16d6f02febd12e8444b148925c602df1396f118e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7aac137557d322f6ec5a201b2f0948ab937d95fb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7aac137557d322f6ec5a201b2f0948ab937d95fb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3705cfeaa8542644be1434746802d8e6cefe3404 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3705cfeaa8542644be1434746802d8e6cefe3404 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 16914ff4f37c7ed9ed03649eb54dea46bd707011 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 16914ff4f37c7ed9ed03649eb54dea46bd707011 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a78d035ffd308995ffd3b9bbfcf9cb393df8e257 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a78d035ffd308995ffd3b9bbfcf9cb393df8e257 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6d9c8b06b04b490f43066ff2d98ebc7020aec8e8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6d9c8b06b04b490f43066ff2d98ebc7020aec8e8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a864f353b4fec2cabdef10ea0e3a0173c8b02cb8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a864f353b4fec2cabdef10ea0e3a0173c8b02cb8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit dfe6497cfca301c4ca948049b71428fba9d629d2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit dfe6497cfca301c4ca948049b71428fba9d629d2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e34af56f66e086efeef5f71fde781891d5178311 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e34af56f66e086efeef5f71fde781891d5178311 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 57f79916dd0ac872cc3c4191eea21853df203fe7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 57f79916dd0ac872cc3c4191eea21853df203fe7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 51abf62b3004e9182f07741641c924b2e2aea6dd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 51abf62b3004e9182f07741641c924b2e2aea6dd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f951ebd009377b4f9768b129bb89df9a07ffc1dd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f951ebd009377b4f9768b129bb89df9a07ffc1dd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e47aec5efd93a727e4bab797fde8a438186dd931 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e47aec5efd93a727e4bab797fde8a438186dd931 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1ec218297e3b3a5afbeff22bc9831ad5d7e7955a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1ec218297e3b3a5afbeff22bc9831ad5d7e7955a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9f1b7bc83147daeff56c291a50ed0484f1cc5079 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9f1b7bc83147daeff56c291a50ed0484f1cc5079 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5e0b8cc210b29f5ce1684c3b9887dd5946cf029a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5e0b8cc210b29f5ce1684c3b9887dd5946cf029a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 63d6462202072b3845312c78591903c01e85800d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 63d6462202072b3845312c78591903c01e85800d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 3542 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 44066d8c065a07422b6ca6d7927a900982574fe2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 44066d8c065a07422b6ca6d7927a900982574fe2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 354b8d0c7f33326c98ab9626a31d0496c68b87ce with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 354b8d0c7f33326c98ab9626a31d0496c68b87ce with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 12525f56c114d9c6cb16ac9f61d35038d0fa979e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 12525f56c114d9c6cb16ac9f61d35038d0fa979e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6c2b16e3a984d1ef57c167cba61ac2f9d9f15189 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6c2b16e3a984d1ef57c167cba61ac2f9d9f15189 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1685e3d50f83012172203723097fdc1384bdd8f5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1685e3d50f83012172203723097fdc1384bdd8f5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 91eee8a5fa386ace1845215c3878ba055bba1993 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 91eee8a5fa386ace1845215c3878ba055bba1993 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b2cecbcd52dceef5bb0757fde0d8488b1069bd5d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b2cecbcd52dceef5bb0757fde0d8488b1069bd5d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c313c2e1ef15d8b211f1b983a91f17104127b6f6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c313c2e1ef15d8b211f1b983a91f17104127b6f6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e57d71c28cee1404e86ee6acbbd0e36807754cb2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e57d71c28cee1404e86ee6acbbd0e36807754cb2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 6 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit e73802515878ee0c896998300e82cefb35aa5f21 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e73802515878ee0c896998300e82cefb35aa5f21 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2a9322ccc9daa876508ca0a5de244e0469e10803 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2a9322ccc9daa876508ca0a5de244e0469e10803 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to find issue 3534 for repository https://github.com/*******/techradar
+WARNING: Failed to enrich commit 68914bac9accd9480e274f7d831ab4d62205e4ae with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 68914bac9accd9480e274f7d831ab4d62205e4ae with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c11b90ed2b0cdbe0c696218ff90956d613df0e0c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c11b90ed2b0cdbe0c696218ff90956d613df0e0c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 87a18ff84850b74f129ba1abf411181455e6fa6c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 87a18ff84850b74f129ba1abf411181455e6fa6c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit aa3d389d1c49594b01731fdb26da67e3d9776986 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit aa3d389d1c49594b01731fdb26da67e3d9776986 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c48b2df5ea75f089476072e9492e905d4298ac6e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c48b2df5ea75f089476072e9492e905d4298ac6e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit de3710909d8e73abcf2b34ddab79b83327e17ab2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit de3710909d8e73abcf2b34ddab79b83327e17ab2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 474863409819e160c0c1de54740907d0caf13d63 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 474863409819e160c0c1de54740907d0caf13d63 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 52bd599da8f812bb661d9f370b28a32738979649 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 52bd599da8f812bb661d9f370b28a32738979649 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b3241b2aeac2d4c7f5df9c03f72e5004447d4d25 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b3241b2aeac2d4c7f5df9c03f72e5004447d4d25 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 588535a317bfc4c22e82618b9851204f99c894aa with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 588535a317bfc4c22e82618b9851204f99c894aa with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 82397bd4ecbf0eb78a1d4f942a9de429743a86df with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 82397bd4ecbf0eb78a1d4f942a9de429743a86df with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f399958f4ae2386d6f9a816aa4fb87a2da787ea7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f399958f4ae2386d6f9a816aa4fb87a2da787ea7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9906a300d16a9e2c77d9df9e474c759cc024c519 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9906a300d16a9e2c77d9df9e474c759cc024c519 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3689bb04b3ddf28daa39ba0faa661613e770adbe with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3689bb04b3ddf28daa39ba0faa661613e770adbe with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9648bedc18bd4fa8df1228be98ce1e68dfab428d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9648bedc18bd4fa8df1228be98ce1e68dfab428d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9455a90685b1e28567f3bb8a303e6aa95e0c7e97 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9455a90685b1e28567f3bb8a303e6aa95e0c7e97 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5c1ed9676c24cdcc64c3ebe6a4571cc34c428e9a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5c1ed9676c24cdcc64c3ebe6a4571cc34c428e9a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b4e6c1c0abd3901be7918319800e3e9a61d8dc69 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b4e6c1c0abd3901be7918319800e3e9a61d8dc69 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4c439c0b1fffb060b5c3f5436add1518756bbca4 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4c439c0b1fffb060b5c3f5436add1518756bbca4 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b83b69bd5302bb8d3b5bf8e8340d6154ff47de23 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b83b69bd5302bb8d3b5bf8e8340d6154ff47de23 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 05b918d37240311f8931601ffb1eaed2aa1d9d40 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 05b918d37240311f8931601ffb1eaed2aa1d9d40 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2e12f614f0b73902ad682a71c766877d9da7fd32 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2e12f614f0b73902ad682a71c766877d9da7fd32 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d56f1a4d2fbd77d97ed094801327a8271406b444 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d56f1a4d2fbd77d97ed094801327a8271406b444 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4654a03be04faab95be7ab3d97e227536251cd86 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4654a03be04faab95be7ab3d97e227536251cd86 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6c44bdeb2ce6b65581fbc8a68ccbee077f27f111 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6c44bdeb2ce6b65581fbc8a68ccbee077f27f111 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 415f26375b4947a300e77f639cd0b2baa9ff1815 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 415f26375b4947a300e77f639cd0b2baa9ff1815 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8d47e119c07d6428096d6d99eb125f71eada4bf2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8d47e119c07d6428096d6d99eb125f71eada4bf2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit fa0e1d33501cf9483a95c62b605d6cefcf614f45 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit fa0e1d33501cf9483a95c62b605d6cefcf614f45 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c92c1c954e61adee829a633ee5ebe68bdb0a5657 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c92c1c954e61adee829a633ee5ebe68bdb0a5657 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 802c35fa8d5dacdf31a75a9acc0bfb7138462deb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 802c35fa8d5dacdf31a75a9acc0bfb7138462deb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5fc89a157f0e14826b18ab4ee481c7a333d3d8c4 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5fc89a157f0e14826b18ab4ee481c7a333d3d8c4 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e0b0e6e2546fc72bb6e5d4dbc2d84972b50f62d9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e0b0e6e2546fc72bb6e5d4dbc2d84972b50f62d9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit eec3184f5ed1ef06f6b2c8280a377097aee247bb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit eec3184f5ed1ef06f6b2c8280a377097aee247bb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 028bcd94aa08284e762c70997b59d0b293117003 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 028bcd94aa08284e762c70997b59d0b293117003 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0f594154e577ec8d7063ff54ec3f0bd079074d90 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0f594154e577ec8d7063ff54ec3f0bd079074d90 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d2df45dfd4bab65430d3bd6f683bb934acf3cf9c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d2df45dfd4bab65430d3bd6f683bb934acf3cf9c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit cedab08b7abe202a38871f5ad42107cf28e4a4b6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit cedab08b7abe202a38871f5ad42107cf28e4a4b6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c24042a218f42075d2d0eb3897b6d6e7339817fe with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c24042a218f42075d2d0eb3897b6d6e7339817fe with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 91e13ec590bb97120af497cb1a10440a535e12ac with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 91e13ec590bb97120af497cb1a10440a535e12ac with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c8d5cada6af19b90e906ddbac36bf6c5a19544f0 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c8d5cada6af19b90e906ddbac36bf6c5a19544f0 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 95c55dcd921bb95c8139c309eb67365f7c13950a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 95c55dcd921bb95c8139c309eb67365f7c13950a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5c5f7f4efd6c148770d005c086e0088ceb65d8e8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5c5f7f4efd6c148770d005c086e0088ceb65d8e8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b005ad1fcad31a3cc8ba8e78feffad983bc2a5e0 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b005ad1fcad31a3cc8ba8e78feffad983bc2a5e0 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ea6dfe7c6baceb07c3867a3285c2f6b240458189 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ea6dfe7c6baceb07c3867a3285c2f6b240458189 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 748a04b5414c3e29ec00462faa21bfc6217fbf43 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 748a04b5414c3e29ec00462faa21bfc6217fbf43 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8873ae6ec7c3c6d0dad910d06e2b7e2e9233d051 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8873ae6ec7c3c6d0dad910d06e2b7e2e9233d051 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 22f6582e6b7678998e3c7a19828e8bf8f0dcf792 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 22f6582e6b7678998e3c7a19828e8bf8f0dcf792 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7593c34faf447a485000c593ad8fad01cbdc08f1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7593c34faf447a485000c593ad8fad01cbdc08f1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 55993630df998466a12d4fa32b4dfd8ca67fa210 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 55993630df998466a12d4fa32b4dfd8ca67fa210 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6d39610bd98982877aa99adb3be4d82c641a7e3d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6d39610bd98982877aa99adb3be4d82c641a7e3d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 19f80049c5d967e0fdeb7df23d7f7dd161185141 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 19f80049c5d967e0fdeb7df23d7f7dd161185141 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 348a4fb6c9b9c800e141bc382807f8ae5ea8ba78 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 348a4fb6c9b9c800e141bc382807f8ae5ea8ba78 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7ff060ea31071d2356170cce44bb80a897055d68 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7ff060ea31071d2356170cce44bb80a897055d68 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 76921e30ccb3826d30c97d3e9c956cfbf06673fb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 76921e30ccb3826d30c97d3e9c956cfbf06673fb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f67bd0e77c1cb7000e94573e7ea3d49492c2ae5f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f67bd0e77c1cb7000e94573e7ea3d49492c2ae5f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e0a38863750be5da247c1ac4952400af335de50d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e0a38863750be5da247c1ac4952400af335de50d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2345adf2eaeb81515fac3321efc45046c043a9bf with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2345adf2eaeb81515fac3321efc45046c043a9bf with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2180f9c684c3d053420cb138f7d97a9860a42f0c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2180f9c684c3d053420cb138f7d97a9860a42f0c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 58d467e0afa15a5b1638c16870ffbb5a0663287e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 58d467e0afa15a5b1638c16870ffbb5a0663287e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3d12d70606f0551ce46b782aa7ad72823025dab7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3d12d70606f0551ce46b782aa7ad72823025dab7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8b17f41fcef7531ff51e76243a62a5a237bf1294 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8b17f41fcef7531ff51e76243a62a5a237bf1294 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f2c0a487a8cbafc792af424c0c14e9fa7d9dfbab with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f2c0a487a8cbafc792af424c0c14e9fa7d9dfbab with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 53de204bd0a0fbca852297a53af303d9f82f1f3e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 53de204bd0a0fbca852297a53af303d9f82f1f3e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7696ad9e85839af5a58bc9c75c126c2cac8551f4 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7696ad9e85839af5a58bc9c75c126c2cac8551f4 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 71b99f5d0dafbdd5a9b285c9ceedb532d3bab500 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 71b99f5d0dafbdd5a9b285c9ceedb532d3bab500 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6d956fe12d652514498c2fbaeb44cfe4b5351401 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6d956fe12d652514498c2fbaeb44cfe4b5351401 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 586fe4629595ef440142c79e43fcfc502b0aad9f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 586fe4629595ef440142c79e43fcfc502b0aad9f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit bcaf8754375a008b29ee58c4692ea311d15cef99 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit bcaf8754375a008b29ee58c4692ea311d15cef99 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ed466195f3e9fa84ce3596ddf93cc242ff2d908a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ed466195f3e9fa84ce3596ddf93cc242ff2d908a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c832063802d7e22b75b0540c3eeb7ab799f51e7d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c832063802d7e22b75b0540c3eeb7ab799f51e7d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 62d90d7e84eff73a1f49d950ca04b0acd88be1bd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 62d90d7e84eff73a1f49d950ca04b0acd88be1bd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d2d8e8323d6c3fe5b1f0353dfa95c36cc230deab with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d2d8e8323d6c3fe5b1f0353dfa95c36cc230deab with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 09ca04865c7f918ef06c92be5261da35c13faa02 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 09ca04865c7f918ef06c92be5261da35c13faa02 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3508af09bc5eeb790d58b5e0b10c2d9e7a50dc39 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3508af09bc5eeb790d58b5e0b10c2d9e7a50dc39 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 46b63370c398dd7015e22578530c5f60653469ee with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 46b63370c398dd7015e22578530c5f60653469ee with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 948ea259d6ebfe4a12b3ad2bcca4a592d6dc8de7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 948ea259d6ebfe4a12b3ad2bcca4a592d6dc8de7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit fb15f1ba16f88b845a99f54ba775e4323726f632 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit fb15f1ba16f88b845a99f54ba775e4323726f632 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 63e6c59d69f0125facdfad1beabbfceb2ceb6765 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 63e6c59d69f0125facdfad1beabbfceb2ceb6765 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8a36960a21e3827968336e817180fe3cf0dcf786 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8a36960a21e3827968336e817180fe3cf0dcf786 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e4095dac2f1f906791bf69d9f555f52f8fae712b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e4095dac2f1f906791bf69d9f555f52f8fae712b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f558fd8bb6c5fa0699ab13dc08bff33b29f02867 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f558fd8bb6c5fa0699ab13dc08bff33b29f02867 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ff3ab8f641afdb1eb7e20149595ec74bb8a93369 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ff3ab8f641afdb1eb7e20149595ec74bb8a93369 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 31d218b76ccab3947195eee9c7489b2d2cf3b38e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 31d218b76ccab3947195eee9c7489b2d2cf3b38e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c8a1edf59e3b6ad906976116653f37617697680a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c8a1edf59e3b6ad906976116653f37617697680a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f5b33b3609a6461db1152c6b8aa8e75272de7873 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f5b33b3609a6461db1152c6b8aa8e75272de7873 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 07794a840fc0646fe2bce30eb87dde08022abbfe with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 07794a840fc0646fe2bce30eb87dde08022abbfe with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1c2e72421ad441e0143374231559ed96ad63f6d3 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1c2e72421ad441e0143374231559ed96ad63f6d3 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e13ca885618259372f7f217f59f51a3bd87bf204 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e13ca885618259372f7f217f59f51a3bd87bf204 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 49fdfb197b2ba9f62aaa8aa994df64e9cdbf1f98 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 49fdfb197b2ba9f62aaa8aa994df64e9cdbf1f98 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 42863a4832474731561075dda2d290a6fcacf712 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 42863a4832474731561075dda2d290a6fcacf712 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b481a230817ae4df25aa0df95855f91aeaddd52e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b481a230817ae4df25aa0df95855f91aeaddd52e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9421e9bfe0292788a366e729094ab498a7e82d93 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9421e9bfe0292788a366e729094ab498a7e82d93 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 44e6f7ac46b10ebed9eca5ee16956da8aabc9afb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 44e6f7ac46b10ebed9eca5ee16956da8aabc9afb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6f217536414383069ce4eb93cf507f385d9a2ca4 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6f217536414383069ce4eb93cf507f385d9a2ca4 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f6b5a02e601a677445fec091b948b3052b2fad0b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f6b5a02e601a677445fec091b948b3052b2fad0b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4862ceb0d516143a44e8e36ed34d3bc1761b49e8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4862ceb0d516143a44e8e36ed34d3bc1761b49e8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 51bac152066a3192cf61643113da0ed92fe18d47 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 51bac152066a3192cf61643113da0ed92fe18d47 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9f4964f3897ac554dfe8865917eb269724779000 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9f4964f3897ac554dfe8865917eb269724779000 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c3e9a4461ecf4ee2e33d19d6f26d10e86cc3f8be with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c3e9a4461ecf4ee2e33d19d6f26d10e86cc3f8be with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 05873173793749b17227d0cd0675f85a0fce08dc with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 05873173793749b17227d0cd0675f85a0fce08dc with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 77aa261a6700e9478c118e855c8e4c38c47c4d3f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 77aa261a6700e9478c118e855c8e4c38c47c4d3f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2230f76a93e629ee35de5d01cf784d0c257e4c03 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2230f76a93e629ee35de5d01cf784d0c257e4c03 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b07fbafe0492f7756f6d6f513d78df9e192b35f7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b07fbafe0492f7756f6d6f513d78df9e192b35f7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 919b51ab49780eb105a78f8f0f356797bf3064ea with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 919b51ab49780eb105a78f8f0f356797bf3064ea with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e86dee3950f7a9baaa9f61f63e20f95f62748aa1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e86dee3950f7a9baaa9f61f63e20f95f62748aa1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit be2783c33be28c6832cd654a7b93473f26e1b974 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit be2783c33be28c6832cd654a7b93473f26e1b974 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 959baecbf873bccd0542a523fc4b0eb5ccf51d72 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 959baecbf873bccd0542a523fc4b0eb5ccf51d72 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a4111b43d131f4eac44415d99fbdef6aad0b4d3a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a4111b43d131f4eac44415d99fbdef6aad0b4d3a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4e488d92209240532d080c10f46c6db9f0e42cf2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4e488d92209240532d080c10f46c6db9f0e42cf2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d8325e0b3cf513807de3a346e9de8b3a1e2732d4 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d8325e0b3cf513807de3a346e9de8b3a1e2732d4 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a49b02e4f0c55399107edb5d76daf30e0d4c4d37 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a49b02e4f0c55399107edb5d76daf30e0d4c4d37 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b0d993e2338bc110ebe0b0d2cb494ac2c7de2226 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b0d993e2338bc110ebe0b0d2cb494ac2c7de2226 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9900a5c17fe7207cfcbe6997ad7d0fbb24306f14 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9900a5c17fe7207cfcbe6997ad7d0fbb24306f14 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9a2dbe6a1fe8890c73d30ea44d11dafa151ed196 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9a2dbe6a1fe8890c73d30ea44d11dafa151ed196 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7dfc90c0d65cf2e95b4001e15e72dcc99b2a0701 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7dfc90c0d65cf2e95b4001e15e72dcc99b2a0701 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b5fec289ad389a08030e077b9e54506efd2f9e66 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b5fec289ad389a08030e077b9e54506efd2f9e66 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 00e75b3dd3d8b1c07046ef8685a9aff976aa41e0 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 00e75b3dd3d8b1c07046ef8685a9aff976aa41e0 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3cd044c7edd4b73fac124a43fcdccb3a00f5811e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3cd044c7edd4b73fac124a43fcdccb3a00f5811e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 820e8621ea50254dd1fc64c6bfa1d38688d0f6a2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 820e8621ea50254dd1fc64c6bfa1d38688d0f6a2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0b37a9ab0ba6f35537d2282ce4219c9c24ddf200 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0b37a9ab0ba6f35537d2282ce4219c9c24ddf200 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 42530c5418df2e9a47bd8389921114d6315bea92 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 42530c5418df2e9a47bd8389921114d6315bea92 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c4ca714949d765a127aa51f2d798e3f97a28e81b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c4ca714949d765a127aa51f2d798e3f97a28e81b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 34228a2d092ba27ee088a3b299448d2d754e5aa5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 34228a2d092ba27ee088a3b299448d2d754e5aa5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit aa621e25fca16bd20adfb9bc39d64fdba6cb8bcd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit aa621e25fca16bd20adfb9bc39d64fdba6cb8bcd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6c879bd05daca53ab7a1dfff4fe6f4e4d76837bd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6c879bd05daca53ab7a1dfff4fe6f4e4d76837bd with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a4ef53e9a030ab07247bb4ab45cbdf89a25e735b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a4ef53e9a030ab07247bb4ab45cbdf89a25e735b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e7d9ab4ef9bbb20d5dd910be4623efd2aa6685ec with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e7d9ab4ef9bbb20d5dd910be4623efd2aa6685ec with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b550507878e7e537285be6fce6c5a02804134d4b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b550507878e7e537285be6fce6c5a02804134d4b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit dac4c397be10fd87e87e2e8b955510375a33170b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit dac4c397be10fd87e87e2e8b955510375a33170b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit fe0b90a7b6e68db919bf7082864dd1d62eab555c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit fe0b90a7b6e68db919bf7082864dd1d62eab555c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ffda6e244038ec8b4f8d66ddec0077fd4e5e34ee with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ffda6e244038ec8b4f8d66ddec0077fd4e5e34ee with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4b56dacfd34fa9cfcc6a93557d3344aa6c91e14c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4b56dacfd34fa9cfcc6a93557d3344aa6c91e14c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3834a966c129ffc7f6f727129b8d6e3f3fc34e9c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3834a966c129ffc7f6f727129b8d6e3f3fc34e9c with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c1a26f105b6410553b75ecdd94b8ab9b8cf0acf8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit c1a26f105b6410553b75ecdd94b8ab9b8cf0acf8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2cd9943a9334f0f90b5d6368bf73b599311463da with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2cd9943a9334f0f90b5d6368bf73b599311463da with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 25d70715422a697efc915d5f03f5540143aa2afc with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 25d70715422a697efc915d5f03f5540143aa2afc with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 87ed26dcac96b9fbfc76fe14aef2567eabf99034 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 87ed26dcac96b9fbfc76fe14aef2567eabf99034 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 70b43fd0d1e181b4e657aa6043d04e2f43e8b0cf with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 70b43fd0d1e181b4e657aa6043d04e2f43e8b0cf with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1af3e4254d74d0fd474b5a54fc34ebac899ca5a0 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1af3e4254d74d0fd474b5a54fc34ebac899ca5a0 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4a3d835a411c9d499a300864cac7818028a7d8c2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 4a3d835a411c9d499a300864cac7818028a7d8c2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9cb1d2beeafe45770c0396a560522ca7f3f76e66 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 9cb1d2beeafe45770c0396a560522ca7f3f76e66 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8584b04dbc1de9c794fdb85e3f210e95d147e0f1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 8584b04dbc1de9c794fdb85e3f210e95d147e0f1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0365e6a86eb109218424cd7e2adf7ebf89e1baa1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0365e6a86eb109218424cd7e2adf7ebf89e1baa1 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit adb8096fd9f87cb35a3e4c750538d3df2b3a5ed0 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit adb8096fd9f87cb35a3e4c750538d3df2b3a5ed0 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1cb9953af0f53f19c3302c198fa66b223f02a225 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1cb9953af0f53f19c3302c198fa66b223f02a225 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 297b3da3fee0bad006fef4763e5354898476ee58 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 297b3da3fee0bad006fef4763e5354898476ee58 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 39e4c825ef452111149e52862f5ea32a00789a46 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 39e4c825ef452111149e52862f5ea32a00789a46 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit fa31070f56e6345910b44bd449078a94e5fbab93 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit fa31070f56e6345910b44bd449078a94e5fbab93 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 85e0d026539a5b780e0532f4c78353ed5b70e1ba with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 85e0d026539a5b780e0532f4c78353ed5b70e1ba with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 638eb0174463927b5f88a08da2238ad423218f18 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 638eb0174463927b5f88a08da2238ad423218f18 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7c865b4ff03010714ca4af5e6e700333243787ad with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7c865b4ff03010714ca4af5e6e700333243787ad with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 09ab04fcbfbfb586344e3d8ece0e85147815ac88 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 09ab04fcbfbfb586344e3d8ece0e85147815ac88 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit abf96ef7f9d407aa7040be4bd32239793ef93c3d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit abf96ef7f9d407aa7040be4bd32239793ef93c3d with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 646ed3c7a26852dcbf9f48c744c0128e1129fdc2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 646ed3c7a26852dcbf9f48c744c0128e1129fdc2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 45a27393f3497537d3cd7e8d9cd639cf12d7ae98 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 45a27393f3497537d3cd7e8d9cd639cf12d7ae98 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ea503beeeb345eb7d3c459a144add00cf968148a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ea503beeeb345eb7d3c459a144add00cf968148a with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit bde8916e61332e70ad85dd5f65829d37b6df1245 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit bde8916e61332e70ad85dd5f65829d37b6df1245 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 98727f4b22defac583218fbbde96b914638482e8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 98727f4b22defac583218fbbde96b914638482e8 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a38bbd158706ac00e91a29fa96b3f783e8cb555f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit a38bbd158706ac00e91a29fa96b3f783e8cb555f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 143489bf0da03813cb464b656604965ec6b48a00 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 143489bf0da03813cb464b656604965ec6b48a00 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2c6e76ea65109b83d80ca1d51088cbb040960711 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2c6e76ea65109b83d80ca1d51088cbb040960711 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d38f0a110aedcad816a2c74397d4eb65edb4da30 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d38f0a110aedcad816a2c74397d4eb65edb4da30 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d2ec62108a5a5d9980f27a52466e5db7b83e4f6e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d2ec62108a5a5d9980f27a52466e5db7b83e4f6e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 38c2d784197a50fc941dc6016f5d6fe39bb95699 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 38c2d784197a50fc941dc6016f5d6fe39bb95699 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 85a8617136aea96b780c0dbecb40e718cd62bcc7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 85a8617136aea96b780c0dbecb40e718cd62bcc7 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit cb19a4011a8f8544fa22f06607fb72686319b96f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit cb19a4011a8f8544fa22f06607fb72686319b96f with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 801bad5d1c386ce3d254a7426238c038181246fc with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 801bad5d1c386ce3d254a7426238c038181246fc with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0301375800882633282197d107093a00bdc492de with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0301375800882633282197d107093a00bdc492de with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f176f72c0499ba9dcbbce566a6bf481f76042848 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f176f72c0499ba9dcbbce566a6bf481f76042848 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e21e7dce7e17d5abb7e8ad127737725b561105e5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit e21e7dce7e17d5abb7e8ad127737725b561105e5 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 26a05b4aa32a2f13167b6527c1a8ea3cbfd6fbba with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 26a05b4aa32a2f13167b6527c1a8ea3cbfd6fbba with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2cf84bc46b8cfd08e39c87e98b0b33b4a0aabda9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2cf84bc46b8cfd08e39c87e98b0b33b4a0aabda9 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 07ca2e37d074b06d6c89bda700cfca8810a39c12 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 07ca2e37d074b06d6c89bda700cfca8810a39c12 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ea045d4e5390e64a046407ba144929371385038b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ea045d4e5390e64a046407ba144929371385038b with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2bcd3962719777f20f25cac39a45952534d8f4c2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 2bcd3962719777f20f25cac39a45952534d8f4c2 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7439db4bf03faf394f17a97fa8f2fdd8d4434336 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 7439db4bf03faf394f17a97fa8f2fdd8d4434336 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 226a47702806b685559bb4f21aaa62a0a9cb8e60 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 226a47702806b685559bb4f21aaa62a0a9cb8e60 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 476e956e03201d4ba9a6e45ecfadb843960b6c73 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 476e956e03201d4ba9a6e45ecfadb843960b6c73 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d57dd32260e20739f5b86eb454466d5fbe59ea72 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit d57dd32260e20739f5b86eb454466d5fbe59ea72 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ba6bcc9e69a2123af585f7f424f7b16e3d4bf503 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit ba6bcc9e69a2123af585f7f424f7b16e3d4bf503 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6a1bbdd10cfee6827ba4744e5feb37ccd85b9a70 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 6a1bbdd10cfee6827ba4744e5feb37ccd85b9a70 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0463fcb8d5d706d52f3b095f167bcdc9ec2ddd92 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 0463fcb8d5d706d52f3b095f167bcdc9ec2ddd92 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5c3e5322c7ade0ce16c299d21bf0974b1cda8869 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 5c3e5322c7ade0ce16c299d21bf0974b1cda8869 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f0cbc7f70c5e2b8195ecce25ae9921e543d7025e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit f0cbc7f70c5e2b8195ecce25ae9921e543d7025e with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1ef71c411a55f5e050aee3d87604ff9beebd52f6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 1ef71c411a55f5e050aee3d87604ff9beebd52f6 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b7f13614aa71aff3eeb2c5916dd9ba1fd09f9223 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit b7f13614aa71aff3eeb2c5916dd9ba1fd09f9223 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3ee68b57465cdfaa0a1307f0c3f70ceac73180bf with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 3ee68b57465cdfaa0a1307f0c3f70ceac73180bf with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 13f50c7f06655cb37153c6ec6c8ac3f1c5216ffb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 13f50c7f06655cb37153c6ec6c8ac3f1c5216ffb with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 23b127a29999c99a5a246449b5584beb96780644 with issues: users.jenkins.io "x-0" already exists
+WARNING: Failed to enrich commit 23b127a29999c99a5a246449b5584beb96780644 with issues: users.jenkins.io "x-0" already exists
+WARNING: No release found for *******/techradar and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/*******/techradar/releases/tag/v0.0.1
+generated: /workspace/source/charts/techradar/templates/release.yaml
+Created Release techradar-0-0-1 resource in namespace **
+Updating PipelineActivity *******-techradar-master-1 with version 0.0.1
+Updated PipelineActivities *******-techradar-master-1 with release notes URL: https://github.com/*******/techradar/releases/tag/v0.0.1
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file techradar-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mzackpan-techradar-master-n8wm5-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app techradar version 0.0.1 to namespace **-staging
+Created Pull Request: https://github.com/*******/environment-eks-cluster-demo-staging/pull/44
+Added label updatebot to Pull Request https://github.com/*******/environment-eks-cluster-demo-staging/pull/44
+got git provider status pending from PR https://github.com/*******/environment-eks-cluster-demo-staging/pull/44
+got git provider status pending from PR https://github.com/*******/environment-eks-cluster-demo-staging/pull/44
+got git provider status pending from PR https://github.com/*******/environment-eks-cluster-demo-staging/pull/44
+Pull Request https://github.com/*******/environment-eks-cluster-demo-staging/pull/44 is merged at sha d00eb3197aff1588b1d88766e1ff0ac930343b05
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names techradar, **-techradar, **-staging-techradar
