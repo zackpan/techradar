@@ -300,7 +300,7 @@ function plotForm (content) {
     .attr('type', 'submit')
     .append('a')
     .attr('class', 'button')
-    .text('Build my radar')
+    .text('Build AACC radar')
 
   form.append('p').html("<a href='https://www.thoughtworks.com/radar/how-to-byor'>Need help?</a>")
 }
