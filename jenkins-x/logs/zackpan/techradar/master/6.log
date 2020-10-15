@@ -1,0 +1,525 @@
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1602767755.6655328,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-zackpan-techradar-master-releas-dgh6p-wcfnk[0m
+{"level":"info","ts":1602767763.1404572,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/*******/techradar.git @ v0.0.6 in path /workspace/source"}
+{"level":"warn","ts":1602767763.1405704,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1602767763.1992674,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:b0909a0bb71e7ce51a477b3fde6a8e714e204033
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+
+> node-sass@4.13.0 install /workspace/source/node_modules/node-sass
+> node scripts/install.js
+
+Downloading binary from https://github.com/sass/node-sass/releases/download/v4.13.0/linux-x64-67_binding.node
+Download complete
+Binary saved to /workspace/source/node_modules/node-sass/vendor/linux-x64-67/binding.node
+Caching binary to /tekton/home/.npm/node-sass/4.13.0/linux-x64-67_binding.node
+
+> cypress@3.7.0 postinstall /workspace/source/node_modules/cypress
+> node index.js --exec install
+
+Installing Cypress (version: 3.7.0)
+
+[?25l[13:16:30]  Downloading Cypress     [started]
+[13:16:32]  Downloading Cypress     [completed]
+[13:16:32]  Unzipping Cypress       [started]
+[13:17:16]  Unzipping Cypress       [completed]
+[13:17:16]  Finishing Installation  [started]
+[13:17:16]  Finishing Installation  [completed]
+[?25h
+You can now open Cypress by running: node_modules/.bin/cypress open
+
+https://on.cypress.io/installing-cypress
+
+[?25h
+> node-sass@4.13.0 postinstall /workspace/source/node_modules/node-sass
+> node scripts/build.js
+
+Binary found at /workspace/source/node_modules/node-sass/vendor/linux-x64-67/binding.node
+Testing binary
+Binary is fine
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+added 1617 packages from 1117 contributors and audited 1675 packages in 73.165s
+found 378 vulnerabilities (371 low, 1 moderate, 6 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> build-your-own-radar@0.3.0 test /workspace/source
+> standard --fix && istanbul cover jasmine
+
+Failed to parse file: /workspace/source/src/util/autoComplete.js
+Transformation error; return original code
+{ Error: Line 37: Unexpected token ...
+    at constructError (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2407:21)
+    at createError (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2426:17)
+    at unexpectedTokenError (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2500:13)
+    at throwUnexpectedToken (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2505:15)
+    at parseObjectPropertyKey (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2891:9)
+    at parseObjectProperty (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:3003:19)
+    at parseObjectInitializer (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:3050:29)
+    at inheritCoverGrammar (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2681:18)
+    at parsePrimaryExpression (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:3247:20)
+    at inheritCoverGrammar (/workspace/source/node_modules/istanbul/node_modules/esprima/esprima.js:2681:18)
+  lineNumber: 37,
+  description: 'Unexpected token ...',
+  index: 1290 }
+Started
+***********.....................................................**
+
+Pending:
+
+1) tr.graphing.Radar init appends the svg
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+2) tr.graphing.Radar init selects body if no selector provided
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+3) tr.graphing.Radar init selects the selector if provided
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+4) tr.graphing.Radar sets the size
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+5) tr.graphing.Radar lines plots a vertical line in the center
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+6) tr.graphing.Radar lines plots a horizontal line in the center
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+7) tr.graphing.Radar circles plots the circles for the rings
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+8) tr.graphing.Radar circles adds the name of each ring for the right side
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+9) tr.graphing.Radar circles adds the name of each ring for the right side
+  This references very old code that no longer exists the tests for graphing will have to be rewritten
+
+
+10) graphingRadar render groups blips by ring
+  No reason given
+
+
+11) graphingRadar render respects the assigned order of rings
+  No reason given
+
+
+12) sheet calls back with nothing if the sheet exists
+  need to be fix: XMLHttpRequest is not defined
+
+
+13) sheet calls back with error if sheet the sheet does not exist
+  need to be fix: XMLHttpRequest is not defined
+
+66 specs, 0 failures, 13 pending specs
+Finished in 0.064 seconds
+Failed to parse file: /workspace/source/src/util/autoComplete.js
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0020] Resolved base name node:10.15.3 to source    
+[36mINFO[0m[0020] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0020] Retrieving image manifest node:10.15.3       
+[36mINFO[0m[0020] Retrieving image manifest node:10.15.3       
+[36mINFO[0m[0021] Retrieving image manifest nginx:1.15.9       
+[36mINFO[0m[0021] Retrieving image manifest nginx:1.15.9       
+[36mINFO[0m[0022] Built cross stage deps: map[0:[/src/build-your-own-radar/dist]] 
+[36mINFO[0m[0022] Retrieving image manifest node:10.15.3       
+[36mINFO[0m[0022] Retrieving image manifest node:10.15.3       
+[36mINFO[0m[0022] Executing 0 build triggers                   
+[36mINFO[0m[0022] Checking for cached layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:4be5150ff07e770da6509598909a4216471df766f5a0521b65087ab909ac1e63... 
+[36mINFO[0m[0022] No cached layer found for cmd COPY package.json ./ 
+[36mINFO[0m[0025] Unpacking rootfs as cmd COPY package.json ./ requires it. 
+[36mINFO[0m[0041] WORKDIR /src/build-your-own-radar            
+[36mINFO[0m[0041] cmd: workdir                                 
+[36mINFO[0m[0041] Changed working directory to /src/build-your-own-radar 
+[36mINFO[0m[0041] Creating directory /src/build-your-own-radar 
+[36mINFO[0m[0041] Resolving 1 paths                            
+[36mINFO[0m[0041] Taking snapshot of files...                  
+[36mINFO[0m[0041] COPY package.json ./                         
+[36mINFO[0m[0041] Resolving 1 paths                            
+[36mINFO[0m[0041] Taking snapshot of files...                  
+[36mINFO[0m[0041] RUN npm install                              
+[36mINFO[0m[0041] Taking snapshot of full filesystem...        
+[36mINFO[0m[0041] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:4be5150ff07e770da6509598909a4216471df766f5a0521b65087ab909ac1e63 to cache now 
+[36mINFO[0m[0045] Resolving 39698 paths                        
+[36mINFO[0m[0049] cmd: /bin/sh                                 
+[36mINFO[0m[0049] args: [-c npm install]                       
+[36mINFO[0m[0049] Running: [/bin/sh -c npm install]            
+npm WARN deprecated istanbul@0.4.5: This module is no longer maintained, try this instead:
+npm WARN deprecated   npm i nyc
+npm WARN deprecated Visit https://istanbul.js.org/integrations for other alternatives.
+npm WARN deprecated request@2.88.0: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+npm WARN deprecated request-promise-native@1.0.9: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+
+> node-sass@4.14.1 install /src/build-your-own-radar/node_modules/node-sass
+> node scripts/install.js
+
+Downloading binary from https://github.com/sass/node-sass/releases/download/v4.14.1/linux-x64-64_binding.node
+Download complete
+Binary saved to /src/build-your-own-radar/node_modules/node-sass/vendor/linux-x64-64/binding.node
+Caching binary to /root/.npm/node-sass/4.14.1/linux-x64-64_binding.node
+
+> core-js@2.6.11 postinstall /src/build-your-own-radar/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+[96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+
+[96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+[96m>[94m https://opencollective.com/core-js [0m
+[96m>[94m https://www.patreon.com/zloirock [0m
+
+[96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+
+
+> cypress@3.8.3 postinstall /src/build-your-own-radar/node_modules/cypress
+> node index.js --exec install
+
+Installing Cypress (version: 3.8.3)
+
+[?25l[13:18:41]  Downloading Cypress     [started]
+[13:18:41]  Downloading Cypress      0% 0s [title changed]
+[13:18:41]  Downloading Cypress      3% 3s [title changed]
+[13:18:41]  Downloading Cypress      7% 3s [title changed]
+[13:18:41]  Downloading Cypress      15% 2s [title changed]
+[13:18:41]  Downloading Cypress      24% 1s [title changed]
+[13:18:41]  Downloading Cypress      31% 1s [title changed]
+[13:18:42]  Downloading Cypress      37% 1s [title changed]
+[13:18:42]  Downloading Cypress      43% 1s [title changed]
+[13:18:42]  Downloading Cypress      48% 1s [title changed]
+[13:18:42]  Downloading Cypress      52% 1s [title changed]
+[13:18:42]  Downloading Cypress      57% 1s [title changed]
+[13:18:42]  Downloading Cypress      62% 1s [title changed]
+[13:18:42]  Downloading Cypress      67% 1s [title changed]
+[13:18:42]  Downloading Cypress      74% 0s [title changed]
+[13:18:42]  Downloading Cypress      90% 0s [title changed]
+[13:18:43]  Downloaded Cypress      [title changed]
+[13:18:43]  Downloaded Cypress      [completed]
+[13:18:43]  Unzipping Cypress       [started]
+[13:18:44]  Unzipping Cypress        0% 0s [title changed]
+[13:18:46]  Unzipping Cypress        1% 245s [title changed]
+[13:18:46]  Unzipping Cypress        1% 246s [title changed]
+[13:18:46]  Unzipping Cypress        1% 247s [title changed]
+[13:18:46]  Unzipping Cypress        1% 248s [title changed]
+[13:18:46]  Unzipping Cypress        1% 249s [title changed]
+[13:18:46]  Unzipping Cypress        1% 250s [title changed]
+[13:18:46]  Unzipping Cypress        2% 124s [title changed]
+[13:18:46]  Unzipping Cypress        2% 125s [title changed]
+[13:18:46]  Unzipping Cypress        2% 126s [title changed]
+[13:18:46]  Unzipping Cypress        2% 127s [title changed]
+[13:18:46]  Unzipping Cypress        2% 128s [title changed]
+[13:18:46]  Unzipping Cypress        2% 129s [title changed]
+[13:18:46]  Unzipping Cypress        3% 85s [title changed]
+[13:18:46]  Unzipping Cypress        3% 86s [title changed]
+[13:18:46]  Unzipping Cypress        3% 87s [title changed]
+[13:18:46]  Unzipping Cypress        3% 88s [title changed]
+[13:18:46]  Unzipping Cypress        4% 65s [title changed]
+[13:18:46]  Unzipping Cypress        4% 66s [title changed]
+[13:18:46]  Unzipping Cypress        4% 67s [title changed]
+[13:18:46]  Unzipping Cypress        5% 53s [title changed]
+[13:18:46]  Unzipping Cypress        5% 54s [title changed]
+[13:18:46]  Unzipping Cypress        5% 55s [title changed]
+[13:18:46]  Unzipping Cypress        6% 45s [title changed]
+[13:18:46]  Unzipping Cypress        6% 46s [title changed]
+[13:18:46]  Unzipping Cypress        7% 39s [title changed]
+[13:18:46]  Unzipping Cypress        7% 40s [title changed]
+[13:18:47]  Unzipping Cypress        8% 35s [title changed]
+[13:18:47]  Unzipping Cypress        8% 36s [title changed]
+[13:18:47]  Unzipping Cypress        9% 32s [title changed]
+[13:18:47]  Unzipping Cypress        10% 29s [title changed]
+[13:18:47]  Unzipping Cypress        11% 26s [title changed]
+[13:18:47]  Unzipping Cypress        11% 27s [title changed]
+[13:18:47]  Unzipping Cypress        12% 24s [title changed]
+[13:18:47]  Unzipping Cypress        12% 25s [title changed]
+[13:18:47]  Unzipping Cypress        13% 22s [title changed]
+[13:18:47]  Unzipping Cypress        13% 23s [title changed]
+[13:18:47]  Unzipping Cypress        14% 21s [title changed]
+[13:18:47]  Unzipping Cypress        14% 22s [title changed]
+[13:18:47]  Unzipping Cypress        15% 20s [title changed]
+[13:18:47]  Unzipping Cypress        15% 21s [title changed]
+[13:18:47]  Unzipping Cypress        16% 19s [title changed]
+[13:18:47]  Unzipping Cypress        16% 20s [title changed]
+[13:18:47]  Unzipping Cypress        17% 18s [title changed]
+[13:18:47]  Unzipping Cypress        17% 19s [title changed]
+[13:18:47]  Unzipping Cypress        18% 17s [title changed]
+[13:18:47]  Unzipping Cypress        18% 18s [title changed]
+[13:18:47]  Unzipping Cypress        19% 17s [title changed]
+[13:18:47]  Unzipping Cypress        20% 16s [title changed]
+[13:18:48]  Unzipping Cypress        21% 15s [title changed]
+[13:18:48]  Unzipping Cypress        22% 15s [title changed]
+[13:18:48]  Unzipping Cypress        23% 14s [title changed]
+[13:18:48]  Unzipping Cypress        24% 13s [title changed]
+[13:18:48]  Unzipping Cypress        24% 14s [title changed]
+[13:18:48]  Unzipping Cypress        25% 13s [title changed]
+[13:18:48]  Unzipping Cypress        26% 12s [title changed]
+[13:18:48]  Unzipping Cypress        26% 13s [title changed]
+[13:18:48]  Unzipping Cypress        27% 12s [title changed]
+[13:18:48]  Unzipping Cypress        28% 12s [title changed]
+[13:18:48]  Unzipping Cypress        29% 11s [title changed]
+[13:18:48]  Unzipping Cypress        29% 12s [title changed]
+[13:18:48]  Unzipping Cypress        30% 11s [title changed]
+[13:18:48]  Unzipping Cypress        30% 12s [title changed]
+[13:18:49]  Unzipping Cypress        31% 12s [title changed]
+[13:18:49]  Unzipping Cypress        32% 11s [title changed]
+[13:18:49]  Unzipping Cypress        32% 12s [title changed]
+[13:18:49]  Unzipping Cypress        33% 11s [title changed]
+[13:18:49]  Unzipping Cypress        34% 11s [title changed]
+[13:18:49]  Unzipping Cypress        35% 11s [title changed]
+[13:18:49]  Unzipping Cypress        36% 10s [title changed]
+[13:18:49]  Unzipping Cypress        37% 10s [title changed]
+[13:18:49]  Unzipping Cypress        38% 10s [title changed]
+[13:18:49]  Unzipping Cypress        39% 9s [title changed]
+[13:18:49]  Unzipping Cypress        40% 9s [title changed]
+[13:18:50]  Unzipping Cypress        41% 9s [title changed]
+[13:18:50]  Unzipping Cypress        41% 10s [title changed]
+[13:18:50]  Unzipping Cypress        42% 10s [title changed]
+[13:18:50]  Unzipping Cypress        43% 9s [title changed]
+[13:18:51]  Unzipping Cypress        44% 9s [title changed]
+[13:18:51]  Unzipping Cypress        45% 9s [title changed]
+[13:18:51]  Unzipping Cypress        46% 9s [title changed]
+[13:18:51]  Unzipping Cypress        47% 8s [title changed]
+[13:18:51]  Unzipping Cypress        48% 8s [title changed]
+[13:18:51]  Unzipping Cypress        49% 8s [title changed]
+[13:18:51]  Unzipping Cypress        50% 8s [title changed]
+[13:18:51]  Unzipping Cypress        51% 8s [title changed]
+[13:18:51]  Unzipping Cypress        52% 7s [title changed]
+[13:18:51]  Unzipping Cypress        53% 7s [title changed]
+[13:18:52]  Unzipping Cypress        54% 7s [title changed]
+[13:18:52]  Unzipping Cypress        55% 7s [title changed]
+[13:18:52]  Unzipping Cypress        56% 6s [title changed]
+[13:18:52]  Unzipping Cypress        56% 7s [title changed]
+[13:18:52]  Unzipping Cypress        57% 6s [title changed]
+[13:18:52]  Unzipping Cypress        58% 6s [title changed]
+[13:18:52]  Unzipping Cypress        59% 6s [title changed]
+[13:18:52]  Unzipping Cypress        60% 6s [title changed]
+[13:18:52]  Unzipping Cypress        61% 5s [title changed]
+[13:18:52]  Unzipping Cypress        61% 6s [title changed]
+[13:18:52]  Unzipping Cypress        62% 5s [title changed]
+[13:18:52]  Unzipping Cypress        63% 5s [title changed]
+[13:18:52]  Unzipping Cypress        64% 5s [title changed]
+[13:18:52]  Unzipping Cypress        65% 5s [title changed]
+[13:18:52]  Unzipping Cypress        100% 0s [title changed]
+[13:18:52]  Unzipped Cypress        [title changed]
+[13:18:52]  Unzipped Cypress        [completed]
+[13:18:52]  Finishing Installation  [started]
+[13:18:53]  Finished Installation   /root/.cache/Cypress/3.8.3 [title changed]
+[13:18:53]  Finished Installation   /root/.cache/Cypress/3.8.3 [completed]
+[?25h
+You can now open Cypress by running: node_modules/.bin/cypress open
+
+https://on.cypress.io/installing-cypress
+
+[?25h
+> node-sass@4.14.1 postinstall /src/build-your-own-radar/node_modules/node-sass
+> node scripts/build.js
+
+Binary found at /src/build-your-own-radar/node_modules/node-sass/vendor/linux-x64-64/binding.node
+Testing binary
+Binary is fine
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.1.2 (node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/watchpack-chokidar2/node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/webpack-dev-server/node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN jsdom@15.2.1 requires a peer of canvas@^2.5.0 but none is installed. You must install peer dependencies yourself.
+npm WARN sass-loader@8.0.2 requires a peer of sass@^1.3.0 but none is installed. You must install peer dependencies yourself.
+npm WARN sass-loader@8.0.2 requires a peer of fibers@>= 3.1.0 but none is installed. You must install peer dependencies yourself.
+npm WARN ws@7.3.1 requires a peer of bufferutil@^4.0.1 but none is installed. You must install peer dependencies yourself.
+npm WARN ws@7.3.1 requires a peer of utf-8-validate@^5.0.2 but none is installed. You must install peer dependencies yourself.
+npm WARN build-your-own-radar@0.3.0 No description
+
+added 1478 packages from 1137 contributors and audited 1482 packages in 42.724s
+found 4 low severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details
+[36mINFO[0m[0092] Taking snapshot of full filesystem...        
+[36mINFO[0m[0093] Resolving 131598 paths                       
+[36mINFO[0m[0165] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:555153dc31e0903f89994cda2cc5a37e451cf97220535982ad06d94e12d894b2 to cache now 
+[36mINFO[0m[0168] COPY . ./                                    
+[36mINFO[0m[0171] Resolving 147 paths                          
+[36mINFO[0m[0171] Taking snapshot of files...                  
+[36mINFO[0m[0171] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:c4a605361e70eecf6f91ccc74e49f3644f7a28dff735b0117a0824c2a996ec3e to cache now 
+[36mINFO[0m[0171] RUN npm run build                            
+[36mINFO[0m[0171] cmd: /bin/sh                                 
+[36mINFO[0m[0171] args: [-c npm run build]                     
+[36mINFO[0m[0171] Running: [/bin/sh -c npm run build]          
+
+> build-your-own-radar@0.3.0 build /src/build-your-own-radar
+> webpack --mode production
+
+Hash: bd9a12563e034fdc1a46
+Version: webpack 4.44.2
+Time: 21410ms
+Built at: 10/15/2020 1:20:39 PM
+                                  Asset       Size  Chunks                                Chunk Names
+        common.bd9a12563e034fdc1a46.css   10.5 KiB       0  [emitted] [immutable]         common
+         common.bd9a12563e034fdc1a46.js   4.06 KiB       0  [emitted] [immutable]         common
+                             error.html   1.12 KiB          [emitted]                     
+                     images/favicon.ico   1.12 KiB          [emitted]                     
+                        images/logo.png   5.52 KiB          [emitted]                     
+                images/radar_legend.png   5.92 KiB          [emitted]                     
+              images/search-logo-2x.svg   1.65 KiB          [emitted]                     
+images/tech-radar-landing-page-wide.png   16.1 KiB          [emitted]                     
+                     images/tw-logo.png   3.64 KiB          [emitted]                     
+                             index.html  293 bytes          [emitted]                     
+          main.bd9a12563e034fdc1a46.css   10.5 KiB       1  [emitted] [immutable]         main
+           main.bd9a12563e034fdc1a46.js   1.14 MiB       1  [emitted] [immutable]  [big]  main
+Entrypoint main [big] = main.bd9a12563e034fdc1a46.css main.bd9a12563e034fdc1a46.js
+Entrypoint common = common.bd9a12563e034fdc1a46.css common.bd9a12563e034fdc1a46.js
+ [25] ./src/util/exceptionMessages.js 736 bytes {1} [built]
+ [26] ./src/common.js 199 bytes {0} {1} [built]
+ [27] ./src/stylesheets/base.scss 692 bytes {0} {1} [built]
+ [29] ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--5-2!./node_modules/postcss-loader/src??postcss!./node_modules/sass-loader/dist/cjs.js!./src/stylesheets/base.scss 39 bytes {0} {1} [built]
+ [30] ./src/images/tech-radar-landing-page-wide.png 83 bytes {0} {1} [built]
+ [31] ./src/images/tw-logo.png 62 bytes {0} {1} [built]
+ [32] ./src/images/favicon.ico 62 bytes {0} {1} [built]
+ [33] ./src/images/search-logo-2x.svg 69 bytes {0} {1} [built]
+ [91] multi ./src/site.js 28 bytes {1} [built]
+ [92] ./src/site.js 194 bytes {1} [built]
+ [93] ./src/images/logo.png 59 bytes {1} [built]
+ [94] ./src/images/radar_legend.png 67 bytes {1} [built]
+ [95] ./src/gtm.js 482 bytes {1} [built]
+ [96] ./src/util/factory.js 12.1 KiB {1} [built]
+[248] multi ./src/common.js 28 bytes {0} [built]
+    + 237 hidden modules
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  main.bd9a12563e034fdc1a46.js (1.14 MiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (1.15 MiB)
+      main.bd9a12563e034fdc1a46.css
+      main.bd9a12563e034fdc1a46.js
+
+
+WARNING in webpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+Child html-webpack-plugin for "error.html":
+     1 asset
+    Entrypoint undefined = error.html
+    [0] ./node_modules/html-webpack-plugin/lib/loader.js!./src/error.html 1.19 KiB {0} [built]
+    [2] (webpack)/buildin/global.js 472 bytes {0} [built]
+    [3] (webpack)/buildin/module.js 497 bytes {0} [built]
+        + 1 hidden module
+Child html-webpack-plugin for "index.html":
+     1 asset
+    Entrypoint undefined = index.html
+    [0] ./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html 359 bytes {0} [built]
+    [2] (webpack)/buildin/global.js 472 bytes {0} [built]
+    [3] (webpack)/buildin/module.js 497 bytes {0} [built]
+        + 1 hidden module
+Child mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--5-2!node_modules/postcss-loader/src/index.js??postcss!node_modules/sass-loader/dist/cjs.js!src/stylesheets/base.scss:
+    Entrypoint mini-css-extract-plugin = *
+    [0] ./node_modules/css-loader/dist/cjs.js??ref--5-2!./node_modules/postcss-loader/src??postcss!./node_modules/sass-loader/dist/cjs.js!./src/stylesheets/base.scss 10.8 KiB {0} [built]
+        + 1 hidden module
+[36mINFO[0m[0195] Taking snapshot of full filesystem...        
+[36mINFO[0m[0196] Resolving 131778 paths                       
+[36mINFO[0m[0255] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:b209f01ac6470be918c7016594a9c9a7a4bdf0f35b1e274823b11bf8bc0a21c2 to cache now 
+[33mWARN[0m[0255] error uploading layer to cache: failed to push to destination 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:4be5150ff07e770da6509598909a4216471df766f5a0521b65087ab909ac1e63: POST https://377247570545.dkr.ecr.us-east-1.amazonaws.com/v2/todo/cache/blobs/uploads/: NAME_UNKNOWN: The repository with name 'todo/cache' does not exist in the registry with id '377247570545' 
+[36mINFO[0m[0255] Saving file src/build-your-own-radar/dist for later use 
+[36mINFO[0m[0255] Deleting filesystem...                       
+[36mINFO[0m[0260] Retrieving image manifest nginx:1.15.9       
+[36mINFO[0m[0261] Retrieving image manifest nginx:1.15.9       
+[36mINFO[0m[0265] Executing 0 build triggers                   
+[36mINFO[0m[0265] Checking for cached layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:d0ec2c2add6676f5e3ad08c8e623338a82662b48538a7588ef20603bcd2eb54c... 
+[36mINFO[0m[0265] No cached layer found for cmd COPY --from=source /src/build-your-own-radar/dist . 
+[36mINFO[0m[0265] Unpacking rootfs as cmd COPY --from=source /src/build-your-own-radar/dist . requires it. 
+[36mINFO[0m[0267] WORKDIR /opt/build-your-own-radar            
+[36mINFO[0m[0267] cmd: workdir                                 
+[36mINFO[0m[0267] Changed working directory to /opt/build-your-own-radar 
+[36mINFO[0m[0267] Creating directory /opt/build-your-own-radar 
+[36mINFO[0m[0267] Resolving 1 paths                            
+[36mINFO[0m[0267] Taking snapshot of files...                  
+[36mINFO[0m[0267] COPY --from=source /src/build-your-own-radar/dist . 
+[36mINFO[0m[0267] Resolving 14 paths                           
+[36mINFO[0m[0267] Taking snapshot of files...                  
+[36mINFO[0m[0267] COPY default.template /etc/nginx/conf.d/default.conf 
+[36mINFO[0m[0267] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:d0ec2c2add6676f5e3ad08c8e623338a82662b48538a7588ef20603bcd2eb54c to cache now 
+[36mINFO[0m[0267] Resolving 1 paths                            
+[36mINFO[0m[0267] Taking snapshot of files...                  
+[36mINFO[0m[0267] CMD ["nginx", "-g", "daemon off;"]           
+[36mINFO[0m[0267] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0267] Pushing layer 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:e0760ab92fc62fadf489bf4c169fdd885f825cc8f1bca4667fcfd00f355ea372 to cache now 
+[33mWARN[0m[0268] error uploading layer to cache: failed to push to destination 377247570545.dkr.ecr.us-east-1.amazonaws.com/todo/cache:e0760ab92fc62fadf489bf4c169fdd885f825cc8f1bca4667fcfd00f355ea372: POST https://377247570545.dkr.ecr.us-east-1.amazonaws.com/v2/todo/cache/blobs/uploads/: NAME_UNKNOWN: The repository with name 'todo/cache' does not exist in the registry with id '377247570545' 
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/techradar to an unshallow repository
+Generating change log from git ref 16690359549100f3bee73750a4ff208f336a8149 => b91fbc206b2874814bc9a272b10c7b433f8144b6
+Associating user x-0 in users.jenkins.io with email *******@hotmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit b0909a0bb71e7ce51a477b3fde6a8e714e204033 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email *******@hotmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit b0909a0bb71e7ce51a477b3fde6a8e714e204033 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for *******/techradar and tag v0.0.6 so creating a new release
+Updated the release information at https://github.com/*******/techradar/releases/tag/v0.0.6
+generated: /workspace/source/charts/techradar/templates/release.yaml
+Created Release techradar-0-0-6 resource in namespace **
+Updating PipelineActivity *******-techradar-master-6 with version 0.0.6
+Updated PipelineActivities *******-techradar-master-6 with release notes URL: https://github.com/*******/techradar/releases/tag/v0.0.6
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file techradar-0.0.6.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mzackpan-techradar-master-releas-dgh6p-6[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app techradar version 0.0.6 to namespace **-staging
+Created Pull Request: https://github.com/*******/environment-eks-cluster-demo-staging/pull/49
+Added label updatebot to Pull Request https://github.com/*******/environment-eks-cluster-demo-staging/pull/49
+got git provider status pending from PR https://github.com/*******/environment-eks-cluster-demo-staging/pull/49
+got git provider status pending from PR https://github.com/*******/environment-eks-cluster-demo-staging/pull/49
+Pull Request https://github.com/*******/environment-eks-cluster-demo-staging/pull/49 is merged at sha 1c8fdfac95b592427972fb9dfc4836f0281eef99
+Pull Request merged but we are not waiting for the update pipeline to complete!
