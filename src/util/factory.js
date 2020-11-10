@@ -302,7 +302,7 @@ function plotForm (content) {
     .attr('class', 'button')
     .text('Build AAC tech radar')
 
-  form.append('p').html("<a href='https://www.thoughtworks.com/radar/how-to-byor'>Need help? Send Email to zack.pan@abnamroclearing.com</a>")
+  form.append('p').html("<a href='https://www.thoughtworks.com/radar/how-to-byor'>Need help? Send Email to peter.hudak@abnamroclearing.com</a>")
 }
 
 function plotErrorMessage (exception) {
